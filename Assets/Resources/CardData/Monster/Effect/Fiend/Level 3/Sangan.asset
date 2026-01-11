@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e5cfbd4daeaaa409acb6107bb6ef84, type: 3}
+  m_Name: Sangan
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Sangan
+    cardText: 'If this card is sent from field to the graveyard: Add 1 card with
+      1500 or less ATK from your deck to your hand'
+    sprite: {fileID: -2652506938461170887, guid: a6ca3751a21be544d833c6a8bdd5ef55, type: 3}
+    cardType: 0
+  hadCardSpecificScript: 1
+  monsterInfo:
+    attribute: 0
+    type: 8
+    attack: 100
+    defense: 600
+    level: 3
+    tributeCost: 0
+    monsterTags: 01000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}

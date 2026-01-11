@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896f8049b1f424d40a0ff7e6ce87b126, type: 3}
+  m_Name: Sanwitch
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Sanwitch
+    cardText: '"Sangan" + "Witch of the Black Forest"'
+    sprite: {fileID: -2857318631069442292, guid: 5aa473f015ec6034388c4f627049e42e, type: 3}
+    cardType: 0
+  hadCardSpecificScript: 0
+  monsterInfo:
+    attribute: 0
+    type: 19
+    attack: 2100
+    defense: 1800
+    level: 6
+    tributeCost: -1
+    monsterTags: 02000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}
+  fusionMaterial:
+  - {fileID: 11400000, guid: a9dd0b5ae7942d94d94fe4960722f68d, type: 2}
+  - {fileID: 11400000, guid: 9fd5fb7cce4f1574c9734bc65df285f2, type: 2}
