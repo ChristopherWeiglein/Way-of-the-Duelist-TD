@@ -682,7 +682,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3079,7 +3079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 321462346766779028, guid: 9f60c8fb5fd4e2e4ab9082e057c72581, type: 3}
       propertyPath: extraDeck.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 321462346766779028, guid: 9f60c8fb5fd4e2e4ab9082e057c72581, type: 3}
       propertyPath: 'extraDeck.Array.data[2]'
@@ -3089,6 +3089,10 @@ PrefabInstance:
       propertyPath: 'extraDeck.Array.data[3]'
       value: 
       objectReference: {fileID: 11400000, guid: 8a41dd66c4ca0f24f9bab96fa8fff482, type: 2}
+    - target: {fileID: 321462346766779028, guid: 9f60c8fb5fd4e2e4ab9082e057c72581, type: 3}
+      propertyPath: 'extraDeck.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b40602a3464a6104da69f056ae530e01, type: 2}
     - target: {fileID: 2358345072360370804, guid: 9f60c8fb5fd4e2e4ab9082e057c72581, type: 3}
       propertyPath: cardsforDeck.Array.size
       value: 8

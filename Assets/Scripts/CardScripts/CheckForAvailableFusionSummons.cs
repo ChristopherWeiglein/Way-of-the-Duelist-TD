@@ -47,7 +47,7 @@ public class CheckForAvailableFusionSummons : MonoBehaviour
         CardData cardData = null;
         foreach(Transform cardTransform in hand.transform)
         {
-            cardData = cardTransform.gameObject.GetComponent<CardInfoManager>().cardData;
+            cardData = cardTransform.gameObject.GetComponent<InfoRoot>().cardData;
             if (cardData.GetCardInfo().cardType != CardDataTypes.CardType.Monster)
                 continue;
             monsterInRotation.Add((MonsterData)cardData);

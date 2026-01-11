@@ -39,4 +39,16 @@ public class HandManager : MonoBehaviour
     {
         DeckManager.instance.DrawCardsFromDeck(cardsDrawnPerTurn);
     }
+
+    public List<LocationDataTypes.CardLocationData> GetHandCardList()
+    {
+        List<LocationDataTypes.CardLocationData> list = new();
+
+        foreach(Transform child in transform)
+        {
+            list.Add(new LocationDataTypes.CardLocationData { gameObject = child.gameObject, cardData = child.GetComponent<InfoRoot>().cardData, cardLocation = LocationDataTypes.CardLocation.Hand });
+        }
+
+        return list;
+    }
 }

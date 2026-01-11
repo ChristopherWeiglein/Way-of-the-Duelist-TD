@@ -75,11 +75,11 @@ public class DeckManager : MonoBehaviour
 
     private IEnumerator TutorSequence(List<MonsterData> monsterList)
     {
-        OptionsManager.instance.ShowOptions(monsterList.OfType<CardData>().ToList());
-        while(OptionsManager.instance.selectedCard == null)
+        OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(monsterList.OfType<CardData>().ToList(), LocationDataTypes.CardLocation.Deck));
+        while(OptionsManager.instance.SelectedCard.cardData == null)
             yield return null;
-        CardFactory.instance.CreateCard(OptionsManager.instance.selectedCard, gameObject.transform.position, hand);
-        deck.Remove(deck.Find(card => card.GetCardInfo().cardName == OptionsManager.instance.selectedCard.GetCardInfo().cardName));
+        CardFactory.instance.CreateCard(OptionsManager.instance.SelectedCard.cardData, gameObject.transform.position, hand);
+        deck.Remove(deck.Find(card => card.GetCardInfo().cardName == OptionsManager.instance.SelectedCard.cardData.GetCardInfo().cardName));
         GameManager.OnCardAddedToHand();
     }
 
@@ -87,4 +87,7 @@ public class DeckManager : MonoBehaviour
     {
         text.text = deck.Count.ToString();
     }
+
+    public List<LocationDataTypes.CardLocationData> GetDeckCardList() => CardLocationPairFactory.AddLocationsToList(deck, LocationDataTypes.CardLocation.Deck);
+
 }

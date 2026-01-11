@@ -39,11 +39,18 @@ public class GraveyardManager : MonoBehaviour
         if (GameManager.CurrentGameMode != GameManager.GameMode.Idle)
             return;
 
-        List<CardData> graveyardList = new();
-        foreach(Transform child in transform)
-        {
-            graveyardList.Add(child.GetComponent<GraveyardCardInfo>().cardData);
-        }
+        List<LocationDataTypes.CardLocationData> graveyardList = GetGraveyardCardList();
         OptionsManager.instance.ShowOptions(graveyardList);
+    }
+
+    public List<LocationDataTypes.CardLocationData> GetGraveyardCardList()
+    {
+        List<LocationDataTypes.CardLocationData> graveyardList = new();
+        foreach (Transform child in transform)
+        {
+            InfoRoot infoRoot = child.GetComponent<IGraveyardCard>() as InfoRoot;
+            graveyardList.Add(new LocationDataTypes.CardLocationData { gameObject = child.gameObject, cardData = infoRoot.cardData, cardLocation = LocationDataTypes.CardLocation.Graveyard});
+        }
+        return graveyardList;
     }
 }

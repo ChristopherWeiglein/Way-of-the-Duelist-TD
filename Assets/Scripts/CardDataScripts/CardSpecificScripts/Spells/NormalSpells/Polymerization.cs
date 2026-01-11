@@ -20,6 +20,6 @@ public class Polymerization : MonoBehaviour
 
     private void ActivateCard()
     {
-        FusionManager.instance.StartFusionSummon();
+        FusionManager.instance.StartFusionSummon(new System.Collections.Generic.List<LocationDataTypes.CardLocation> { LocationDataTypes.CardLocation.Hand, LocationDataTypes.CardLocation.Field});
     }
 }

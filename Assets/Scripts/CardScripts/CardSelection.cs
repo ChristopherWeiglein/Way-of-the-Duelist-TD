@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class CardSelection : MonoBehaviour
 {
-    [SerializeField] private CardInfoManager cardInfoManager;
+    private InfoRoot cardInfoManager;
+
+    private void Start()
+    {
+        cardInfoManager = GetComponent<InfoRoot>();
+    }
 
     private void OnMouseDown()
     {
-        OptionsManager.instance.SelectCard(cardInfoManager.cardData);
+        OptionsManager.instance.SelectCard(new LocationDataTypes.CardLocationData {gameObject = gameObject, cardData = cardInfoManager.cardData, cardLocation = gameObject.GetComponent<CardLocationUIManager>().cardLocation });
         transform.parent.BroadcastMessage("DestroyCard");
     }
 

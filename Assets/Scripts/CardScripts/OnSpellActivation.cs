@@ -3,7 +3,12 @@ using System.Collections.Generic;
 
 public class OnSpellActivation : MonoBehaviour
 {
-    [SerializeField] private CardInfoManager cardInfoManager;
+    private InfoRoot cardInfoManager;
+
+    private void Start()
+    {
+        cardInfoManager = GetComponent<InfoRoot>();
+    }
 
     private void ActivateCard()
     {

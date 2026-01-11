@@ -22,8 +22,23 @@ public class GraveyardCardFactory : MonoBehaviour
     public void CreateGraveyardCard(CardData cardData, List<CardDataTypes.CardTags> tagList)
     {
         GameObject newCard = Instantiate(graveyardCardPrefab, gameObject.transform.position, Quaternion.identity, gameObject.transform);
-        newCard.GetComponent<GraveyardCardInfo>().cardData = cardData;
-        newCard.GetComponent<GraveyardCardInfo>().cardTags = tagList;
+        InfoRoot graveyardCard;
+        switch (cardData.GetCardInfo().cardType)
+        {
+            case CardDataTypes.CardType.Monster:
+                graveyardCard = newCard.AddComponent<MonsterGraveyardCardInfo>();
+                break;
+            case CardDataTypes.CardType.Spell:
+                graveyardCard = newCard.AddComponent<SpellGraveyardCardInfo>();
+                break;
+            case CardDataTypes.CardType.Trap:               
+            default:
+                graveyardCard = newCard.AddComponent<MonsterGraveyardCardInfo>();
+                break;
+        }
+
+        graveyardCard.cardData = cardData;
+        newCard.GetComponent<IGraveyardCard>().cardTags = tagList;
         newCard.GetComponent<SpriteRenderer>().sprite = cardData.GetCardInfo().sprite;
         if (cardData.HasCardSpecificScript())
             newCard.AddComponent(Type.GetType(cardData.name));

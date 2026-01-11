@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class CardFactory : MonoBehaviour
 {
@@ -22,7 +23,25 @@ public class CardFactory : MonoBehaviour
     {
         GameObject newCard = Instantiate(cardPrefab, position, parent.transform.rotation, parent.transform);
         newCard.GetComponent<SpriteRenderer>().sprite = cardData.GetCardInfo().sprite;
-        newCard.GetComponent<CardInfoManager>().cardData = cardData;
+        switch (cardData.GetCardInfo().cardType)
+        {
+            case CardDataTypes.CardType.Monster:
+                MonsterCardHandInfo monsterCardHandInfo = newCard.AddComponent<MonsterCardHandInfo>();
+                monsterCardHandInfo.cardData = cardData;
+                monsterCardHandInfo.cardInfo = cardData.GetCardInfo();
+                monsterCardHandInfo.MonsterInfo = ConvertCardData.ToMonsterData(cardData).GetMonsterInfo();
+                break;
+            case CardDataTypes.CardType.Spell:
+                SpellCardHandInfo spellCardHandInfo = newCard.AddComponent<SpellCardHandInfo>();
+                spellCardHandInfo.cardData = cardData;
+                spellCardHandInfo.cardInfo = cardData.GetCardInfo();
+                break;
+            case CardDataTypes.CardType.Trap:
+                break;
+            default: 
+                break;
+        }
+
         if (cardData.HasCardSpecificScript())
             newCard.AddComponent(Type.GetType(cardData.name));
     }

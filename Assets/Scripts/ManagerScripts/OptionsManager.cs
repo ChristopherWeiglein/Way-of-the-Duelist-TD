@@ -5,7 +5,7 @@ using UnityEngine;
 public class OptionsManager : MonoBehaviour
 {
     public static OptionsManager instance;
-    public CardData selectedCard { get; private set; }
+    public LocationDataTypes.CardLocationData SelectedCard { get; private set; }
     [SerializeField] private GameObject cardSelectionPrefab;
 
     private void Awake()
@@ -20,35 +20,36 @@ public class OptionsManager : MonoBehaviour
         }
     }
 
-    public void ShowOptions(List<CardData> cardData)
+    public void ShowOptions(List<LocationDataTypes.CardLocationData> cardData)
     {
         if (cardData.Count <= 0)
             return;
 
-        selectedCard = null;
+        SelectedCard = new LocationDataTypes.CardLocationData();
         StartCoroutine(SelectionSequence(cardData));
     }
 
-    public void SelectCard(CardData cardData)
+    public void SelectCard(LocationDataTypes.CardLocationData cardData)
     {
-        selectedCard = cardData;
+        SelectedCard = cardData;
     }
 
-    private IEnumerator SelectionSequence(List<CardData> cardData)
+    private IEnumerator SelectionSequence(List<LocationDataTypes.CardLocationData> cardData)
     {
         GameManager.EnterSelectionMode();
-        foreach (CardData card in cardData)
+        foreach (LocationDataTypes.CardLocationData card in cardData)
             CreateCard(card);
-        while(selectedCard == null)
+        while(SelectedCard.cardData == null)
             yield return null;
         GameManager.LeaveSelectionMode();
     }
 
-    public void CreateCard(CardData cardData)
+    public void CreateCard(LocationDataTypes.CardLocationData cardData)
     {
         GameObject newCard = Instantiate(cardSelectionPrefab, transform.position, transform.rotation, transform);
-        newCard.GetComponent<SpriteRenderer>().sprite = cardData.GetCardInfo().sprite;
-        newCard.GetComponent<CardInfoManager>().cardData = cardData;
+        newCard.GetComponent<SpriteRenderer>().sprite = cardData.cardData.GetCardInfo().sprite;
+        newCard.GetComponent<InfoRoot>().cardData = cardData.cardData;
+        newCard.GetComponent<CardLocationUIManager>().cardLocation = cardData.cardLocation;
     }
 
 }

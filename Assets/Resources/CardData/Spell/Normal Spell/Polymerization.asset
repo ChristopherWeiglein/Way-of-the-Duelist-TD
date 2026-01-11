@@ -18,4 +18,4 @@ MonoBehaviour:
       your hand or towers from your field as material
     sprite: {fileID: 5727433728046004092, guid: e26f639892f0c3d4698b55867a94e312, type: 3}
     cardType: 1
-  hadCardSpecificScript: 1
+  hasCardSpecificScript: 1

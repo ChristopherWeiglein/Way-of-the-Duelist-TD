@@ -438,7 +438,6 @@ GameObject:
   - component: {fileID: 2165726675008841172}
   - component: {fileID: 1335148168748052479}
   - component: {fileID: 2780418229845110736}
-  - component: {fileID: 2332851273637253630}
   - component: {fileID: 1788596392967264736}
   - component: {fileID: 5707905310641626524}
   - component: {fileID: 1458270507094025551}
@@ -514,7 +513,7 @@ SpriteRenderer:
   m_SortingLayerID: -1380104497
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6854409640247110177, guid: f6eee24e6f8437e4791a1e7866af38ca, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -522,7 +521,7 @@ SpriteRenderer:
   m_Size: {x: 8.13, y: 11.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1335148168748052479
@@ -583,22 +582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cedd533a51a362848a6ae775b3f92053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2332851273637253630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7191849028897374189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a944516058ed48445a2310f64af2fc6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardData: {fileID: 0}
-  normalSummonPossible: 0
-  activationPossible: 0
-  specialSummonPossible: 0
 --- !u!114 &1788596392967264736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,7 +594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c65118b0959aa4b9583aa9b4c304a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardInfoManager: {fileID: 2332851273637253630}
 --- !u!114 &5707905310641626524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,7 +609,6 @@ MonoBehaviour:
   buttonNormalSummon: {fileID: 7101575997991264430}
   buttonActivate: {fileID: 4274506857309057221}
   buttonSpecialSummon: {fileID: 8801828389740699199}
-  cardInfoManager: {fileID: 2332851273637253630}
 --- !u!114 &1458270507094025551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,7 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ca8dc076dfea642874d0872b3a2bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardInfoManager: {fileID: 2332851273637253630}
+  cardInfoManager: {fileID: 0}
 --- !u!50 &-8463088556926726193
 Rigidbody2D:
   serializedVersion: 5
@@ -680,7 +661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6919c55f735f96945b79d45f8bb9a929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardInfoManager: {fileID: 2332851273637253630}
 --- !u!114 &6841064592061976070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,7 +673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61bdcbfe57d15148bee714e45bbf5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardInfoManager: {fileID: 2332851273637253630}
 --- !u!114 &-8438317896776127390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce3920888c404d499526f3bcbed55b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 2332851273637253630}
+  info: {fileID: 0}
 --- !u!114 &-6659505844582814032
 MonoBehaviour:
   m_ObjectHideFlags: 0

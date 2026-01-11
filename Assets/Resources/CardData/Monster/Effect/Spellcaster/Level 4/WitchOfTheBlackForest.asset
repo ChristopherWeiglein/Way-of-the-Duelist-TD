@@ -18,7 +18,7 @@ MonoBehaviour:
       1500 or less DEF from your deck to your hand'
     sprite: {fileID: -7305716519653927243, guid: 51a794f70b776dd4995fe7d56f60b8dc, type: 3}
     cardType: 0
-  hadCardSpecificScript: 1
+  hasCardSpecificScript: 1
   monsterInfo:
     attribute: 0
     type: 19

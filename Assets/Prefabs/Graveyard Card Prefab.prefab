@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2373753453856123763}
   - component: {fileID: 2165726675008841172}
   - component: {fileID: -4018114313560254109}
-  - component: {fileID: 1406375118102004501}
   - component: {fileID: 4119371069227165551}
   m_Layer: 2
   m_Name: Graveyard Card Prefab
@@ -102,21 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce3920888c404d499526f3bcbed55b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 1406375118102004501}
---- !u!114 &1406375118102004501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7191849028897374189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c1d4430966d03a45b2bb44109b21de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardData: {fileID: 0}
-  cardTags: 
+  info: {fileID: 0}
 --- !u!114 &4119371069227165551
 MonoBehaviour:
   m_ObjectHideFlags: 0

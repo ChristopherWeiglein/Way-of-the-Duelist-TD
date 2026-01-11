@@ -6,9 +6,14 @@ public class CardHMI : MonoBehaviour
     [SerializeField] private GameObject buttonNormalSummon;
     [SerializeField] private GameObject buttonActivate;
     [SerializeField] private GameObject buttonSpecialSummon;
-    [SerializeField] private CardInfoManager cardInfoManager;
+    private IHandCard cardInfoManager;
 
     private bool buttonsActive = false;
+
+    private void Start()
+    {
+        cardInfoManager = GetComponent<IHandCard>();
+    }
 
     private void OnMouseDown()
     {
@@ -22,7 +27,7 @@ public class CardHMI : MonoBehaviour
         else
         {
             gameObject.transform.parent.BroadcastMessage("DeactivateButtons");
-            buttonNormalSummon.SetActive(cardInfoManager.normalSummonPossible);
+            buttonNormalSummon.SetActive(cardInfoManager.NormalSummonPossible);
             buttonActivate.SetActive(cardInfoManager.activationPossible);
             buttonSpecialSummon.SetActive(cardInfoManager.specialSummonPossible);
             buttonsActive = true;           

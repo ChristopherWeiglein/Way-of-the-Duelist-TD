@@ -43,6 +43,6 @@ public class ExtraDeckManager : MonoBehaviour
         if (GameManager.CurrentGameMode != GameManager.GameMode.Idle)
             return;
 
-        OptionsManager.instance.ShowOptions(extraDeck.OfType<CardData>().ToList());
+        OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(extraDeck.OfType<CardData>().ToList(), LocationDataTypes.CardLocation.ExtraDeck));
     }
 }

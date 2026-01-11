@@ -1,9 +1,16 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UseAsFusionMaterial : MonoBehaviour
 {
-    [SerializeField] private CardInfoManager cardInfoManager;
+    private MonsterCardHandInfo cardInfoManager;
+
+    private void Start()
+    {
+        cardInfoManager = GetComponent<IMonsterCard>() as MonsterCardHandInfo;
+    }
+
     private void OnMouseDown()
     {
         if (cardInfoManager.cardData.GetCardInfo().cardType != CardDataTypes.CardType.Monster)

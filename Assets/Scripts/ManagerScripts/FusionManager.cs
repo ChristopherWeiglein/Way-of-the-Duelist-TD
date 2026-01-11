@@ -20,9 +20,9 @@ public class FusionManager : MonoBehaviour
         }
     }
 
-    public void StartFusionSummon()
-    {
-        StartCoroutine(FusionSummonSequence());      
+    public void StartFusionSummon(List<LocationDataTypes.CardLocation> fusionMaterialLocations)
+    {       
+        StartCoroutine(FusionSummonSequence(fusionMaterialLocations));      
     }
 
     public bool TryUseAsFusionMaterial(MonsterData monsterData)
@@ -31,12 +31,27 @@ public class FusionManager : MonoBehaviour
         {
             if (CompareFusionMaterial(monsterData, cardData))
             {
-                remainingFusionmaterial.Remove(cardData);
-                    
+                remainingFusionmaterial.Remove(cardData);                   
                 return true;
             }
         }
         return false;
+    }
+
+    private List<LocationDataTypes.CardLocationData> GetCardsInRotation(List<LocationDataTypes.CardLocation> fusionMaterialLocations)
+    {
+        List<LocationDataTypes.CardLocationData> list = new();
+
+        if (fusionMaterialLocations.Contains(LocationDataTypes.CardLocation.Hand))
+            list.AddRange(HandManager.instance.GetHandCardList());
+
+        if (fusionMaterialLocations.Contains(LocationDataTypes.CardLocation.Field))
+            list.AddRange(SummonedMonstersManager.instance.GetSummonedMonsterList());
+
+        if (fusionMaterialLocations.Contains(LocationDataTypes.CardLocation.Graveyard))
+            list.AddRange(GraveyardManager.instance.GetGraveyardCardList());
+        
+        return list;
     }
 
     public bool CompareFusionMaterial(MonsterData monsterToCompare, MonsterData requiredFusionMaterial)
@@ -59,20 +74,21 @@ public class FusionManager : MonoBehaviour
         return true;
     }
 
-    private IEnumerator FusionSummonSequence()
+    private IEnumerator FusionSummonSequence(List<LocationDataTypes.CardLocation> fusionMaterialLocations)
     {
         TextMessageManager.instance.ShowMessage("Choose a card to summon");
-        OptionsManager.instance.ShowOptions(ExtraDeckManager.instance.availableFusionSummons.OfType<CardData>().ToList());
+        OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(ExtraDeckManager.instance.availableFusionSummons.OfType<CardData>().ToList(), LocationDataTypes.CardLocation.ExtraDeck));
         while(GameManager.CurrentGameMode == GameManager.GameMode.SelectionMode)
             yield return null;
         TextMessageManager.instance.ShowMessage("Choose the cards used as fusion material");
         GameManager.EnterFusionMode();
         remainingFusionmaterial.Clear();        
-        FusionMonsterData fusionMonsterData = (FusionMonsterData)OptionsManager.instance.selectedCard;
-        ExtraDeckManager.instance.extraDeck.Remove(ExtraDeckManager.instance.extraDeck.Find(card => card.GetCardInfo().cardName == fusionMonsterData.GetCardInfo().cardName));
+        FusionMonsterData fusionMonsterData = (FusionMonsterData)OptionsManager.instance.SelectedCard.cardData;       
         remainingFusionmaterial.AddRange(fusionMonsterData.GetFusionMaterial());
+
         while (remainingFusionmaterial.Count > 0)
             yield return null;
+        ExtraDeckManager.instance.extraDeck.Remove(ExtraDeckManager.instance.extraDeck.Find(card => card.GetCardInfo().cardName == fusionMonsterData.GetCardInfo().cardName));
         GameManager.LeaveFusionMode();
         SummonManager.instance.SummonMonster(fusionMonsterData);  
 

@@ -17,4 +17,4 @@ MonoBehaviour:
     cardText: Draw 2 cards
     sprite: {fileID: 7452464583276480427, guid: d41752fe65fa9444789e1e018ed82576, type: 3}
     cardType: 1
-  hadCardSpecificScript: 1
+  hasCardSpecificScript: 1

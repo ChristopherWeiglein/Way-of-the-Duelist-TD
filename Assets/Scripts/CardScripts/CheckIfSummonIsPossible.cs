@@ -3,26 +3,33 @@ using UnityEngine;
 
 public class CheckIfSummonIsPossible : MonoBehaviour
 {
-    public CardInfoManager cardInfoManager;
+    private IHandCard cardInfoManager;
+
+    private void Start()
+    {
+        cardInfoManager = GetComponent<IHandCard>();
+    }
 
     private void OnEnable()
     {
-        GameManager.OnGameStateChanged += IsSummonPossible;
+        GameManager.OnGameStateChanged += IsNormalSummonPossible;
     }
 
     private void OnDisable()
     {
-        GameManager.OnGameStateChanged -= IsSummonPossible;
+        GameManager.OnGameStateChanged -= IsNormalSummonPossible;
     }
 
-    private void IsSummonPossible()
+    private void IsNormalSummonPossible()
     {
-        CardData cardData = cardInfoManager.cardData;
+        cardInfoManager = GetComponent<IHandCard>();
+        InfoRoot infoRoot = (InfoRoot)cardInfoManager;
+        CardData cardData = infoRoot.cardData;
 
         if(cardData.GetCardInfo().cardType == CardDataTypes.CardType.Monster)
         {
             MonsterData monsterData = (MonsterData)cardData;
-            cardInfoManager.SetSummonPossible(monsterData.GetMonsterInfo().tributeCost <= GameObject.Find("SummonedMonsters").transform.childCount && monsterData.GetMonsterInfo().tributeCost >= 0 && NormalSummonManager.instance.availableNormalSummons > 0);
+            cardInfoManager.SetNormalSummonPossible(monsterData.GetMonsterInfo().tributeCost <= GameObject.Find("SummonedMonsters").transform.childCount && monsterData.GetMonsterInfo().tributeCost >= 0 && NormalSummonManager.instance.availableNormalSummons > 0);
         }
     }
 }

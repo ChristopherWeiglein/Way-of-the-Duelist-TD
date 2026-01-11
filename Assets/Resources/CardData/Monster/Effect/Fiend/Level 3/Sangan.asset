@@ -18,7 +18,7 @@ MonoBehaviour:
       1500 or less ATK from your deck to your hand'
     sprite: {fileID: -2652506938461170887, guid: a6ca3751a21be544d833c6a8bdd5ef55, type: 3}
     cardType: 0
-  hadCardSpecificScript: 1
+  hasCardSpecificScript: 1
   monsterInfo:
     attribute: 0
     type: 8
