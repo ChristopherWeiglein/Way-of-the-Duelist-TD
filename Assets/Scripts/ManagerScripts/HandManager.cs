@@ -40,13 +40,14 @@ public class HandManager : MonoBehaviour
         DeckManager.instance.DrawCardsFromDeck(cardsDrawnPerTurn);
     }
 
-    public List<LocationDataTypes.CardLocationData> GetHandCardList()
+    public List<LocationDataTypes.CardLocationData> GetMonstersInHand()
     {
         List<LocationDataTypes.CardLocationData> list = new();
 
         foreach(Transform child in transform)
         {
-            list.Add(new LocationDataTypes.CardLocationData { gameObject = child.gameObject, cardData = child.GetComponent<InfoRoot>().cardData, cardLocation = LocationDataTypes.CardLocation.Hand });
+            if(child.GetComponent<InfoRoot>().cardData.GetCardInfo().cardType == CardDataTypes.CardType.Monster)
+                list.Add(new LocationDataTypes.CardLocationData { correlatingGameObject = child.gameObject, cardData = child.GetComponent<InfoRoot>().cardData, cardLocation = LocationDataTypes.CardLocation.Hand });
         }
 
         return list;

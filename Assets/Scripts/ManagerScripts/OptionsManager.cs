@@ -49,7 +49,7 @@ public class OptionsManager : MonoBehaviour
         GameObject newCard = Instantiate(cardSelectionPrefab, transform.position, transform.rotation, transform);
         newCard.GetComponent<SpriteRenderer>().sprite = cardData.cardData.GetCardInfo().sprite;
         newCard.GetComponent<InfoRoot>().cardData = cardData.cardData;
-        newCard.GetComponent<CardLocationUIManager>().cardLocation = cardData.cardLocation;
+        newCard.GetComponent<CardLocationUIManager>().cardLocationData = cardData;
     }
 
 }

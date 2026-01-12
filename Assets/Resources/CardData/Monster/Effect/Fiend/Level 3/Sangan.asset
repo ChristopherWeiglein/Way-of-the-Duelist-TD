@@ -22,7 +22,7 @@ MonoBehaviour:
   monsterInfo:
     attribute: 0
     type: 8
-    attack: 100
+    attack: 1000
     defense: 600
     level: 3
     tributeCost: 0

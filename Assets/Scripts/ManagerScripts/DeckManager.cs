@@ -88,6 +88,13 @@ public class DeckManager : MonoBehaviour
         text.text = deck.Count.ToString();
     }
 
+    public void SendCardToGrave(CardData cardData, List<CardDataTypes.CardTags> graveTags)
+    {
+        deck.Remove(deck.Find(card => card.GetCardInfo().cardName == cardData.GetCardInfo().cardName));
+        ShuffleDeck();
+        GraveyardCardFactory.instance.CreateGraveyardCard(cardData, graveTags);
+    }
+
     public List<LocationDataTypes.CardLocationData> GetDeckCardList() => CardLocationPairFactory.AddLocationsToList(deck, LocationDataTypes.CardLocation.Deck);
 
 }

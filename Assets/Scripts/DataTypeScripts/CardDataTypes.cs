@@ -61,10 +61,7 @@ public class CardDataTypes
         Xyz,
         Pendulum,
         Link,
-        Tuner,
-        RedEyes,
-        BlueEyes,
-        Archfiend
+        Tuner
     }
 
     public enum CardTags
@@ -72,7 +69,9 @@ public class CardDataTypes
         UsedAsTribute,
         ActivatedSpellCard,
         UsedAsFusionMaterial,
-        SentFromField
+        SentFromField,
+        SentFromDeck,
+        SentFromHand
     }
 
     [Serializable]

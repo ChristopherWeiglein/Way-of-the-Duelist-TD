@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e5cfbd4daeaaa409acb6107bb6ef84, type: 3}
+  m_Name: SkullServant
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Skull Servant
+    cardText: A skeletal ghost that isn't strong but can mean trouble in large numbers.
+    sprite: {fileID: 1725150090408881750, guid: 1ea2b04532dc7f74b96a35e763c9b6a9, type: 3}
+    cardType: 0
+  hasCardSpecificScript: 0
+  monsterInfo:
+    attribute: 0
+    type: 24
+    attack: 300
+    defense: 200
+    level: 1
+    tributeCost: 0
+    monsterTags: 00000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}

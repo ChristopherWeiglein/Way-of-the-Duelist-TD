@@ -18,7 +18,7 @@ MonoBehaviour:
       Dragon"'
     sprite: {fileID: -6359563910836922138, guid: 83772e0a6f2d4454cb7b51c7c44fdd11, type: 3}
     cardType: 0
-  hadCardSpecificScript: 0
+  hasCardSpecificScript: 0
   monsterInfo:
     attribute: 4
     type: 6
@@ -26,7 +26,7 @@ MonoBehaviour:
     defense: 3800
     level: 12
     tributeCost: -1
-    monsterTags: 0900000002000000
+    monsterTags: 02000000
   towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}
   fusionMaterial:
   - {fileID: 11400000, guid: c8ce80feaba617d4eb0cf5334f0f7caa, type: 2}

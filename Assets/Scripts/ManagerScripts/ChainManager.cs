@@ -8,6 +8,7 @@ public class ChainManager : MonoBehaviour
 
     public delegate void ChainLink();
     public List<ChainLink> effectChain = new();
+    private ChainLinkVisualisation chainLinkVisualisation;
 
     private void Awake()
     {
@@ -19,6 +20,11 @@ public class ChainManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Start()
+    {
+        chainLinkVisualisation = GameObject.Find("ChainLinkVisualisation").GetComponent<ChainLinkVisualisation>();
     }
 
     private void OnEnable()
@@ -43,12 +49,14 @@ public class ChainManager : MonoBehaviour
             while (GameManager.CurrentGameMode != GameManager.GameMode.Idle)
                 yield return null;
             effectChain[effectChain.Count - 1]();
+            chainLinkVisualisation.RemoveChainLink(effectChain.Count - 1);
             effectChain.RemoveAt(effectChain.Count - 1);
         }
     }
 
-    public void AddChainLink(ChainLink chainLink)
+    public void AddChainLink(ChainLink chainLink, CardData cardData)
     {
         effectChain.Add(chainLink);
+        chainLinkVisualisation.AddChainLink(cardData);
     }
 }

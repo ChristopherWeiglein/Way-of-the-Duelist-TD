@@ -18,7 +18,7 @@ MonoBehaviour:
       treated as an "Archfiend" card.)'
     sprite: {fileID: 6854409640247110177, guid: f6eee24e6f8437e4791a1e7866af38ca, type: 3}
     cardType: 0
-  hadCardSpecificScript: 0
+  hasCardSpecificScript: 0
   monsterInfo:
     attribute: 0
     type: 6
@@ -26,7 +26,7 @@ MonoBehaviour:
     defense: 2500
     level: 9
     tributeCost: -1
-    monsterTags: 020000000a000000
+    monsterTags: 02000000
   towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}
   fusionMaterial:
   - {fileID: 11400000, guid: 9c98f69c77dd65b4f9118c43b46704c7, type: 2}

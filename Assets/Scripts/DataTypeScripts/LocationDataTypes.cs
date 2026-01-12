@@ -14,7 +14,7 @@ public class LocationDataTypes
 
     public struct CardLocationData
     {
-        public GameObject gameObject;
+        public GameObject correlatingGameObject;
         public CardData cardData;
         public CardLocation cardLocation;
     }

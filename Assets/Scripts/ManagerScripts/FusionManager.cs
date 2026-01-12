@@ -38,18 +38,20 @@ public class FusionManager : MonoBehaviour
         return false;
     }
 
-    private List<LocationDataTypes.CardLocationData> GetCardsInRotation(List<LocationDataTypes.CardLocation> fusionMaterialLocations)
+    private List<LocationDataTypes.CardLocationData> GetMonsterInRotation(List<LocationDataTypes.CardLocation> fusionMaterialLocations)
     {
         List<LocationDataTypes.CardLocationData> list = new();
 
         if (fusionMaterialLocations.Contains(LocationDataTypes.CardLocation.Hand))
-            list.AddRange(HandManager.instance.GetHandCardList());
+            list.AddRange(HandManager.instance.GetMonstersInHand());
 
         if (fusionMaterialLocations.Contains(LocationDataTypes.CardLocation.Field))
             list.AddRange(SummonedMonstersManager.instance.GetSummonedMonsterList());
 
         if (fusionMaterialLocations.Contains(LocationDataTypes.CardLocation.Graveyard))
-            list.AddRange(GraveyardManager.instance.GetGraveyardCardList());
+            list.AddRange(GraveyardManager.instance.GetMonsterInGrave());
+
+        //GetMonsterInDeck
         
         return list;
     }
@@ -85,9 +87,30 @@ public class FusionManager : MonoBehaviour
         remainingFusionmaterial.Clear();        
         FusionMonsterData fusionMonsterData = (FusionMonsterData)OptionsManager.instance.SelectedCard.cardData;       
         remainingFusionmaterial.AddRange(fusionMonsterData.GetFusionMaterial());
+        foreach(MonsterData fusionmaterial in remainingFusionmaterial)
+        {
+            OptionsManager.instance.ShowOptions(GetMonsterInRotation(fusionMaterialLocations).FindAll(card => CompareFusionMaterial((MonsterData)card.cardData, fusionmaterial)));
+            while (OptionsManager.instance.SelectedCard.cardData == null)
+                yield return null;
 
-        while (remainingFusionmaterial.Count > 0)
+            switch (OptionsManager.instance.SelectedCard.cardLocation)
+            {
+                case LocationDataTypes.CardLocation.Field:
+                    OptionsManager.instance.SelectedCard.correlatingGameObject.SendMessage("SendToGrave", new List<CardDataTypes.CardTags>() { CardDataTypes.CardTags.UsedAsFusionMaterial, CardDataTypes.CardTags.SentFromField });
+                    break;
+                case LocationDataTypes.CardLocation.Deck:
+                    DeckManager.instance.SendCardToGrave(OptionsManager.instance.SelectedCard.cardData, new List<CardDataTypes.CardTags>() { CardDataTypes.CardTags.UsedAsFusionMaterial, CardDataTypes.CardTags.SentFromDeck});
+                    break;
+                case LocationDataTypes.CardLocation.Hand:
+                    OptionsManager.instance.SelectedCard.correlatingGameObject.SendMessage("SendToGrave", new List<CardDataTypes.CardTags>() { CardDataTypes.CardTags.UsedAsFusionMaterial, CardDataTypes.CardTags.SentFromHand });
+                    break;
+                case LocationDataTypes.CardLocation.ExtraDeck:
+                case LocationDataTypes.CardLocation.Banishment:
+                default:
+                    break;
+            }
             yield return null;
+        }       
         ExtraDeckManager.instance.extraDeck.Remove(ExtraDeckManager.instance.extraDeck.Find(card => card.GetCardInfo().cardName == fusionMonsterData.GetCardInfo().cardName));
         GameManager.LeaveFusionMode();
         SummonManager.instance.SummonMonster(fusionMonsterData);  

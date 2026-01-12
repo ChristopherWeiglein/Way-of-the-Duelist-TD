@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896f8049b1f424d40a0ff7e6ce87b126, type: 3}
+  m_Name: MetalDragon
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Metal Dragon
+    cardText: '"Steel Ogre Grotto #1" + "Lesser Dragon"'
+    sprite: {fileID: 8374678075536432515, guid: ccb6780f3979bb742ae75c012e2ef0a5, type: 3}
+    cardType: 0
+  hasCardSpecificScript: 0
+  monsterInfo:
+    attribute: 6
+    type: 12
+    attack: 1850
+    defense: 1700
+    level: 6
+    tributeCost: -1
+    monsterTags: 02000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}
+  fusionMaterial:
+  - {fileID: 11400000, guid: 9f3ac0f6ab1272746a4af7bf84a3a37b, type: 2}
+  - {fileID: 11400000, guid: 5c946a150f9bbe0488dbfae5d6b965e7, type: 2}

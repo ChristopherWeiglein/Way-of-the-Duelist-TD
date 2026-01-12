@@ -11,7 +11,7 @@ public class CardSelection : MonoBehaviour
 
     private void OnMouseDown()
     {
-        OptionsManager.instance.SelectCard(new LocationDataTypes.CardLocationData {gameObject = gameObject, cardData = cardInfoManager.cardData, cardLocation = gameObject.GetComponent<CardLocationUIManager>().cardLocation });
+        OptionsManager.instance.SelectCard(GetComponent<CardLocationUIManager>().cardLocationData);
         transform.parent.BroadcastMessage("DestroyCard");
     }
 

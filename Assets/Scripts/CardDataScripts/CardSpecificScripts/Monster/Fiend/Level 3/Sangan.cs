@@ -17,7 +17,7 @@ public class Sangan : MonoBehaviour
     {
         if (cardTags.Contains(CardDataTypes.CardTags.SentFromField))
         {
-            ChainManager.instance.AddChainLink(TutorCard);
+            ChainManager.instance.AddChainLink(TutorCard, GetComponent<InfoRoot>().cardData);
         }
     }
     

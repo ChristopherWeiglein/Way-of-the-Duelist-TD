@@ -17,7 +17,7 @@ MonoBehaviour:
     cardText: '''A ferocious dragon with a deadly attack.'''''
     sprite: {fileID: 5131448398639850124, guid: c86c0dd9ae0a7b643b744d6deec4e1ab, type: 3}
     cardType: 0
-  hadCardSpecificScript: 0
+  hasCardSpecificScript: 0
   monsterInfo:
     attribute: 0
     type: 6
@@ -25,5 +25,5 @@ MonoBehaviour:
     defense: 2000
     level: 7
     tributeCost: 2
-    monsterTags: 0000000008000000
+    monsterTags: 00000000
   towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}

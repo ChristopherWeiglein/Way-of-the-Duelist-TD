@@ -15,13 +15,6 @@ public class TowerTribute : MonoBehaviour
                     Destroy(gameObject);
                 }
                 break;
-            case GameManager.GameMode.FusionSummonMode:
-                if (FusionManager.instance.TryUseAsFusionMaterial((MonsterData)towerInfo.cardData))
-                {
-                    GraveyardCardFactory.instance.CreateGraveyardCard((MonsterData)towerInfo.cardData, new List<CardDataTypes.CardTags>() { CardDataTypes.CardTags.UsedAsFusionMaterial, CardDataTypes.CardTags.SentFromField });
-                    Destroy(gameObject);
-                }
-                break;
             default:
                 break;
         }

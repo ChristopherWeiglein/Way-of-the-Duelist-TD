@@ -443,9 +443,9 @@ GameObject:
   - component: {fileID: 1458270507094025551}
   - component: {fileID: -8463088556926726193}
   - component: {fileID: 1150448132960034065}
-  - component: {fileID: 6841064592061976070}
   - component: {fileID: -8438317896776127390}
   - component: {fileID: -6659505844582814032}
+  - component: {fileID: 358947826748022446}
   m_Layer: 0
   m_Name: Generic Card Prefab
   m_TagString: Untagged
@@ -661,18 +661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6919c55f735f96945b79d45f8bb9a929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6841064592061976070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7191849028897374189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e61bdcbfe57d15148bee714e45bbf5ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-8438317896776127390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,7 +673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce3920888c404d499526f3bcbed55b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 0}
 --- !u!114 &-6659505844582814032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,6 +683,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bac858ec41fcca47b4abeb281e2c07b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &358947826748022446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191849028897374189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61db9f5f542ffb428b99d9da8547323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7810599752615745697

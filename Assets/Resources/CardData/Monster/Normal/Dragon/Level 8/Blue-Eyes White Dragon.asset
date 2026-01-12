@@ -19,7 +19,7 @@ MonoBehaviour:
       tale.
     sprite: {fileID: 8113078476510186639, guid: f1c166cf7ae3ced4e81b8a4c9e342564, type: 3}
     cardType: 0
-  hadCardSpecificScript: 0
+  hasCardSpecificScript: 0
   monsterInfo:
     attribute: 4
     type: 6
@@ -27,5 +27,5 @@ MonoBehaviour:
     defense: 2500
     level: 8
     tributeCost: 2
-    monsterTags: 0000000009000000
+    monsterTags: 00000000
   towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}

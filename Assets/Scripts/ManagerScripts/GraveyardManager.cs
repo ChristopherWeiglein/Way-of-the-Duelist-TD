@@ -49,7 +49,19 @@ public class GraveyardManager : MonoBehaviour
         foreach (Transform child in transform)
         {
             InfoRoot infoRoot = child.GetComponent<IGraveyardCard>() as InfoRoot;
-            graveyardList.Add(new LocationDataTypes.CardLocationData { gameObject = child.gameObject, cardData = infoRoot.cardData, cardLocation = LocationDataTypes.CardLocation.Graveyard});
+            graveyardList.Add(new LocationDataTypes.CardLocationData { correlatingGameObject = child.gameObject, cardData = infoRoot.cardData, cardLocation = LocationDataTypes.CardLocation.Graveyard});
+        }
+        return graveyardList;
+    }
+
+    public List<LocationDataTypes.CardLocationData> GetMonsterInGrave()
+    {
+        List<LocationDataTypes.CardLocationData> graveyardList = new();
+        foreach (Transform child in transform)
+        {
+            InfoRoot infoRoot = child.GetComponent<IGraveyardCard>() as InfoRoot;
+            if(infoRoot.cardData.GetCardInfo().cardType == CardDataTypes.CardType.Monster)
+                graveyardList.Add(new LocationDataTypes.CardLocationData { correlatingGameObject = child.gameObject, cardData = infoRoot.cardData, cardLocation = LocationDataTypes.CardLocation.Graveyard });
         }
         return graveyardList;
     }

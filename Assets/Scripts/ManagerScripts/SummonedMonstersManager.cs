@@ -23,7 +23,7 @@ public class SummonedMonstersManager : MonoBehaviour
 
         foreach(Transform child in transform)
         {
-            list.Add(new LocationDataTypes.CardLocationData { gameObject = child.gameObject, cardData = child.GetComponent<InfoRoot>().cardData, cardLocation = LocationDataTypes.CardLocation.Field });
+            list.Add(new LocationDataTypes.CardLocationData { correlatingGameObject = child.gameObject, cardData = child.GetComponent<InfoRoot>().cardData, cardLocation = LocationDataTypes.CardLocation.Field });
         }
 
         return list;
