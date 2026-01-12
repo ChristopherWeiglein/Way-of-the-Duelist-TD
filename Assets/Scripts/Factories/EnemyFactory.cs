@@ -21,7 +21,7 @@ public class EnemyFactory : MonoBehaviour
     {
         GameObject newEnemy = Instantiate(enemyPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation, spawnPoint.transform);
         newEnemy.GetComponent<EnemyInfo>().cardData = monsterData;
-        newEnemy.GetComponent<EnemyInfo>().monsterInfo = monsterData.GetMonsterInfo();
+        newEnemy.GetComponent<EnemyInfo>().MonsterInfo = monsterData.GetMonsterInfo();
         newEnemy.GetComponent<SpriteRenderer>().sprite = monsterData.GetCardInfo().sprite;
     }
 }

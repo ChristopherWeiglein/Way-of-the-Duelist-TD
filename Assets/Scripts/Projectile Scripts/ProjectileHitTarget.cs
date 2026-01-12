@@ -17,6 +17,7 @@ public class ProjectileHitTarget : MonoBehaviour
             targetHealthManager.health -= projectileData.power;
             if(targetHealthManager.health <= 0)
             {
+                GameObject.Find("Starchips").GetComponent<StarChipsManager>().AddStarChips(collision.gameObject.GetComponent<IMonsterCard>().MonsterInfo.level);
                 Destroy(projectileData.target);
             }
             Destroy(gameObject);

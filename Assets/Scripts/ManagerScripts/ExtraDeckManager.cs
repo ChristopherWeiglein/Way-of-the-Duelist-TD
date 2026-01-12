@@ -19,6 +19,8 @@ public class ExtraDeckManager : MonoBehaviour
         else
         {
             instance = this;
+            SaveLoadHandler.LoadDeckList();
+            extraDeck = ConvertCardData.ToExtraDeckMonsterList(SaveLoadHandler.extraDeckList);
         }
     }
 

@@ -99,3 +99,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b40602a3464a6104da69f056ae530e01, type: 2}
   - {fileID: 11400000, guid: e848df4ca8119de4ea2d22c590f19937, type: 2}
   - {fileID: 11400000, guid: 827b2710a227e9e45b354bdb46eefe7a, type: 2}
+  starchips: 0
+  records: 00000000

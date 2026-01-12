@@ -17,6 +17,8 @@ public class BoxHandler : MonoBehaviour
         cardList = SaveLoadHandler.cardList;
         ShowCardList();
         OnAmountChanged?.Invoke();
+        GameObject.Find("Deck").GetComponent<DeckBoxHandler>().InstantiateDeck();
+        GameObject.Find("ExtraDeck").GetComponent<ExtraDeckBoxHandler>().InstantiateExtraDeck();
     }
 
     private void ShowCardList()

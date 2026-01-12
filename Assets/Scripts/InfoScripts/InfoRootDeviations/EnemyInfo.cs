@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyInfo : InfoRoot
+public class EnemyInfo : InfoRoot, IMonsterCard
 {
-    public CardDataTypes.MonsterInfo monsterInfo;
+    public CardDataTypes.MonsterInfo MonsterInfo {  get; set; }
 }

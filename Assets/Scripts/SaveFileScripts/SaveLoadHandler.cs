@@ -10,12 +10,15 @@ public static class SaveLoadHandler
     public static List<DeckEditorDataTypes> cardList;
     public static List<CardData> deckList;
     public static List<CardData> extraDeckList;
+    public static int starchips;
+    public static int[] records;
     private static readonly string decklistPath = Application.persistentDataPath + "Decklist.ygotd";
     private static readonly string cardlistPath = Application.persistentDataPath + "Cardlist.ygotd";
+    private static readonly string profilePath = Application.persistentDataPath + "Profile.ygotd";
 
+    //Called from DeckEditor
     public static void SaveDeckList()
     {
-        List<DeckEditorDataTypes> cardList = GameObject.Find("Box").GetComponent<BoxHandler>().GetCardList();
         List<CardData> deckList = GameObject.Find("Deck").GetComponent<DeckBoxHandler>().GetDeckList();
         List<CardData> extraDeckList = GameObject.Find("ExtraDeck").GetComponent<ExtraDeckBoxHandler>().GetExtraDeckList();
 
@@ -24,6 +27,18 @@ public static class SaveLoadHandler
         BinaryFormatter formatter = new();
 
         FileStream fileStream = new(decklistPath, FileMode.Create);
+
+        formatter.Serialize(fileStream, saveFileObject);
+        fileStream.Close();
+    }
+
+    public static void SaveProfileData(int starchips, int[] records)
+    {
+        SaveFileProfile saveFileObject = new(starchips, records);
+
+        BinaryFormatter formatter = new();
+
+        FileStream fileStream = new(profilePath, FileMode.Create);
 
         formatter.Serialize(fileStream, saveFileObject);
         fileStream.Close();
@@ -66,6 +81,28 @@ public static class SaveLoadHandler
             {
                 extraDeckList.Add(card);
             }
+        }
+    }
+
+    public static void LoadProfileData()
+    {
+        if (File.Exists(profilePath))
+        {
+            BinaryFormatter formatter = new();
+            FileStream fileStream = new(profilePath, FileMode.Open);
+
+            SaveFileProfile data = formatter.Deserialize(fileStream) as SaveFileProfile;
+            fileStream.Close();
+
+            starchips = data.starchips;
+            records = data.records;
+        }
+        else
+        {
+            PredefinedSave saveData = Resources.Load<PredefinedSave>("SaveData/StartingSave");
+
+            starchips = saveData.GetStarChips();
+            records = saveData.GetRecords();
         }
     }
 

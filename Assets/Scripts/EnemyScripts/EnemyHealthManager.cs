@@ -10,7 +10,7 @@ public class EnemyHealthManager : MonoBehaviour
     private void Start()
     {
 
-        health = (int)(enemyStats.monsterInfo.defense * math.pow(1.1, SpawnManager.instance.WaveNumber));
+        health = (int)(enemyStats.MonsterInfo.defense * math.pow(1.1, SpawnManager.instance.WaveNumber));
         healthBarBehaviour.SetMaxHealth(health);
     }
 

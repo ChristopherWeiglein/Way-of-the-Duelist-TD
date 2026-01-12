@@ -6,7 +6,7 @@ public class ExtraDeckBoxHandler : MonoBehaviour
 {
     private List<CardData> extraDeckList;
 
-    private void Start()
+    public void InstantiateExtraDeck()
     {
         SaveLoadHandler.LoadDeckList();
         extraDeckList = SaveLoadHandler.extraDeckList;
@@ -35,7 +35,7 @@ public class ExtraDeckBoxHandler : MonoBehaviour
 
     public bool TryAddCardToDeck(CardData cardData)
     {
-        if (extraDeckList.FindAll(card => card.GetCardInfo().cardName == cardData.GetCardInfo().cardName).Count >= 3 || extraDeckList.Count >= 60)
+        if (extraDeckList.FindAll(card => card.GetCardInfo().cardName == cardData.GetCardInfo().cardName).Count >= 3 || extraDeckList.Count >= 15)
             return false;
 
         if (!GameObject.Find("Box").GetComponent<BoxHandler>().TryGetCardFromBox(cardData))

@@ -22,15 +22,11 @@ public class DeckManager : MonoBehaviour
         else
         {
             instance = this;
+            SaveLoadHandler.LoadDeckList();
+            deck = SaveLoadHandler.deckList;
+            ShuffleDeck();
         }
-        foreach (CardData card in cardsforDeck)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                deck.Add(card);
-            }
-        }
-        ShuffleDeck();
+        
     }
 
     private void ShuffleDeck()

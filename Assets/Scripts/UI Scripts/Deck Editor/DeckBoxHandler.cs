@@ -6,7 +6,7 @@ public class DeckBoxHandler : MonoBehaviour
 {
     private List<CardData> deckList = new();
 
-    private void Start()
+    public void InstantiateDeck()
     {
         SaveLoadHandler.LoadDeckList();
         deckList = SaveLoadHandler.deckList;

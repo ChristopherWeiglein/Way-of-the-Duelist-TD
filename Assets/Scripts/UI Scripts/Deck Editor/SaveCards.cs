@@ -4,15 +4,14 @@ public class SaveCards : MonoBehaviour
 {
     public void SaveCardLists()
     {
-        SaveLoadHandler.SaveDeckList();
-    }
-
-    public void LoadCardLists()
-    {
-        SaveLoadHandler.LoadDeckList();
-        foreach(CardData card in SaveLoadHandler.deckList)
+        int decklistcount = GameObject.Find("Deck").GetComponent<DeckBoxHandler>().GetDeckList().Count;
+        int extradecklistcount = GameObject.Find("ExtraDeck").GetComponent<ExtraDeckBoxHandler>().GetExtraDeckList().Count;
+        if (decklistcount < 40)
         {
-            Debug.Log(card.name);
+            GameObject.Find("Message").GetComponent<MessageHandler>().ShowMessageForSeconds("Deck size too low", 3);
+            return;
         }
+
+        SaveLoadHandler.SaveDeckList();
     }
 }

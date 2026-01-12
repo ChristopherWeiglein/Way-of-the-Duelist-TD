@@ -16,8 +16,6 @@ MonoBehaviour:
   - waveList:
     - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
       amount: 4
-    - enemy: {fileID: 11400000, guid: 81c6f45890d710942b3cdb0f0540c139, type: 2}
-      amount: 1
   - waveList:
     - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
       amount: 5
@@ -42,8 +40,222 @@ MonoBehaviour:
   - waveList:
     - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
       amount: 6
-    - enemy: {fileID: 11400000, guid: c8ce80feaba617d4eb0cf5334f0f7caa, type: 2}
-      amount: 1
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 6
   - waveList:
     - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
       amount: 6
