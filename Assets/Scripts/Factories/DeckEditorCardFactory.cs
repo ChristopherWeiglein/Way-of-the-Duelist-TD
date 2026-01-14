@@ -25,6 +25,7 @@ public class DeckEditorCardFactory : MonoBehaviour
         newCard.GetComponent<Image>().sprite = cardData.GetCardInfo().sprite;
         newCard.GetComponent<InfoRoot>().cardData = cardData;
         newCard.GetComponent<InfoRoot>().cardInfo = cardData.GetCardInfo();
+        newCard.AddComponent<DestroyCards>();
 
         switch (parent.name)
         {
@@ -35,6 +36,8 @@ public class DeckEditorCardFactory : MonoBehaviour
             case "Deck":
             case "ExtraDeck":
                 newCard.AddComponent<RemoveCardFromDeck>();
+                break;
+            case "PullsPanel":               
                 break;
             default:
                 break;

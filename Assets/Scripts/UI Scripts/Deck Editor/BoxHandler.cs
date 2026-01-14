@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BoxHandler : MonoBehaviour
@@ -10,9 +11,12 @@ public class BoxHandler : MonoBehaviour
     public delegate void EventMethod();
     public static event EventMethod OnCardsShown;
     public static event EventMethod OnAmountChanged;
+   
 
-    private void Start()
+    private void OnEnable()
     {
+        if(transform.childCount > 0)
+            BroadcastMessage("Destroy");
         SaveLoadHandler.LoadCardList();
         cardList = SaveLoadHandler.cardList;
         ShowCardList();

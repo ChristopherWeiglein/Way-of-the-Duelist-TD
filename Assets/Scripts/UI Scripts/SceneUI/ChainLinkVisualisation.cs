@@ -19,5 +19,6 @@ public class ChainLinkVisualisation : MonoBehaviour
     public void RemoveChainLink(int position)
     {
         Destroy(chain[position]);
+        chain.RemoveAt(position);
     }
 }

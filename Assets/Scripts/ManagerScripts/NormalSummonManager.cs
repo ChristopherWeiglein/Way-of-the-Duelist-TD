@@ -3,33 +3,20 @@ using UnityEngine;
 
 public class NormalSummonManager : MonoBehaviour
 {
-    public static NormalSummonManager instance;
     public int availableNormalSummons { get; private set; } = 1;
     public int normalSummonsPerTurn = 1;
 
-    private void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            instance = this;
-        }
-    }
-
     private void OnEnable()
     {
-        GameManager.OnTurnStart += OnTurnStart;
+        GameManager.OnTurnStart += IncreaseNormalSummon;
     }
 
     private void OnDisable()
     {
-        GameManager.OnTurnStart -= OnTurnStart;
+        GameManager.OnTurnStart -= IncreaseNormalSummon;
     }
 
-    private void OnTurnStart()
+    public void IncreaseNormalSummon()
     {
         availableNormalSummons = normalSummonsPerTurn;
         GameManager.NormalSummonsIncreased();

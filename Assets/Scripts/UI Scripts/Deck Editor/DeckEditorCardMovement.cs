@@ -4,10 +4,10 @@ public class DeckEditorCardMovement : MonoBehaviour
 {
     private const float speed = 500.0f;
     private const int cardsInARow = 10;
-    private const float offsetX = 5f;
-    private const float cardDistanceX = 60;
-    private float offsetY = -5f;
-    private const float cardDistanceY = -85;
+    [SerializeField] private float offsetX = 5f;
+    [SerializeField] private float cardDistanceX = 60;
+    [SerializeField] private float offsetY = -5f;
+    [SerializeField] private float cardDistanceY = -85;
 
     private void Update()
     {

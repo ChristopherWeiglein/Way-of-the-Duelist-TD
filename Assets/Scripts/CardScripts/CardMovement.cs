@@ -4,6 +4,9 @@ public class CardMovement : MonoBehaviour
 {
     private const float cardSpeed = 10f;
     private Vector3 offset;
+    private const int cardsInARow = 6;
+    private const float cardSizeX = 1.7f;
+    private const float cardSizeY = 2.5f;
 
     private void Start()
     {
@@ -17,12 +20,16 @@ public class CardMovement : MonoBehaviour
 
     private Vector3 FindDestination()
     {
-        int cardsInHand = gameObject.transform.parent.childCount;
+        int totalcards = gameObject.transform.parent.childCount;
         int index = transform.GetSiblingIndex();
-        float cardSize = 1.7f;
+        int positionInRow = index % cardsInARow + 1;
+        int numberOfRows = totalcards / cardsInARow + ((totalcards % cardsInARow) > 0 ? 1 : 0);
+        int ownRow = index / cardsInARow + 1;
+        int cardsInOwnRow = ownRow < numberOfRows ? cardsInARow : ((totalcards % cardsInARow) != 0 ? (totalcards % cardsInARow) : cardsInARow);
 
-        float xValue = (-1) * ((float)(1 + cardsInHand) / 2 - index - 1) * cardSize;
+        float xValue = (positionInRow - (float)cardsInOwnRow / 2 - 0.5f) * cardSizeX;
+        float yValue = (int)(index / cardsInARow) * cardSizeY;
 
-        return new Vector3(xValue, 0, 0) + offset;
+        return new Vector3(xValue, yValue, 0) + offset;
     }
 }

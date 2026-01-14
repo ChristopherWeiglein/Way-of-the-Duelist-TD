@@ -11,7 +11,7 @@ public class NormalSummonCard : MonoBehaviour
 
     private void NormalSummonThisCard()
     {
-        NormalSummonManager.instance.NormalSummonMonster((MonsterData)cardInfoManager.cardData);
+        GameObject.Find("FieldPrefab").GetComponent<NormalSummonManager>().NormalSummonMonster((MonsterData)cardInfoManager.cardData);
         Destroy(gameObject);
     }
 }

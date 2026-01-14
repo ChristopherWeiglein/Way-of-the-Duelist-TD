@@ -27,4 +27,4 @@ MonoBehaviour:
     level: 7
     tributeCost: 2
     monsterTags: 00000000
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}

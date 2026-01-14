@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
-    private float speed = 1;
+    [SerializeField] private float speed = 1;
     private float distanceWalked = 0;
     [SerializeField] private EnemyInfo stats;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        speed = Mathf.Pow(1.1f, stats.MonsterInfo.level);
+        speed = Mathf.Pow(2f, 1000f / ((float)stats.MonsterInfo.defense + 100f)) / 2;
     }
 
     // Update is called once per frame

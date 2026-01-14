@@ -22,4 +22,24 @@ public static class CardLocationPairFactory
         }
         return list;
     }
+
+    public static List<CardData> RemoveLocationsFromCardList(List<LocationDataTypes.CardLocationData> cardlist)
+    {
+        List<CardData> list = new();
+        foreach(LocationDataTypes.CardLocationData card in cardlist)
+        {
+            list.Add(card.cardData);
+        }
+        return list;
+    }
+
+    public static List<MonsterData> RemoveLocationsFromMonsterList(List<LocationDataTypes.CardLocationData> cardlist)
+    {
+        List<MonsterData> list = new();
+        foreach (LocationDataTypes.CardLocationData card in cardlist)
+        {
+            list.Add(card.cardData as MonsterData);
+        }
+        return list;
+    }
 }

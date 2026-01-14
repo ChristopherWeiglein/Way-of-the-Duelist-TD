@@ -12,9 +12,9 @@ public static class SaveLoadHandler
     public static List<CardData> extraDeckList;
     public static int starchips;
     public static int[] records;
-    private static readonly string decklistPath = Application.persistentDataPath + "Decklist.ygotd";
-    private static readonly string cardlistPath = Application.persistentDataPath + "Cardlist.ygotd";
-    private static readonly string profilePath = Application.persistentDataPath + "Profile.ygotd";
+    private static readonly string decklistPath = Application.persistentDataPath + "\\Decklist.ygotd";
+    private static readonly string cardlistPath = Application.persistentDataPath + "\\Cardlist.ygotd";
+    private static readonly string profilePath = Application.persistentDataPath + "\\Profile.ygotd";
 
     //Called from DeckEditor
     public static void SaveDeckList()
@@ -40,6 +40,15 @@ public static class SaveLoadHandler
 
         FileStream fileStream = new(profilePath, FileMode.Create);
 
+        formatter.Serialize(fileStream, saveFileObject);
+        fileStream.Close();
+    }
+
+    public static void SaveCardList(List<DeckEditorDataTypes> cardlist)
+    {
+        SaveFileCardList saveFileObject = new(cardlist);
+        BinaryFormatter formatter = new();
+        FileStream fileStream = new(cardlistPath, FileMode.Create);
         formatter.Serialize(fileStream, saveFileObject);
         fileStream.Close();
     }

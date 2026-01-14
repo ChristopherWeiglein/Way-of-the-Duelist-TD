@@ -22,6 +22,8 @@ public class PlayerHealthManager : MonoBehaviour
     public void ChangePlayerHealth(int change)
     {
         playerHealth += change;
-        gameObject.GetComponent<TMP_Text>().text = "LP:" + playerHealth.ToString();
+        gameObject.GetComponent<TMP_Text>().text = "LP: " + playerHealth.ToString();
+        if (playerHealth <= 0)
+            GameOverManager.GameOver();
     }
 }

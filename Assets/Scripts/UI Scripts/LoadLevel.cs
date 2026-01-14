@@ -8,4 +8,8 @@ public class LoadLevel : MonoBehaviour
         SceneManager.LoadScene(gameObject.name);
     }
     
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }

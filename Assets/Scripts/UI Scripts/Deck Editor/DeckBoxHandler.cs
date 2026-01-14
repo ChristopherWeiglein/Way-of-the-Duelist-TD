@@ -8,6 +8,8 @@ public class DeckBoxHandler : MonoBehaviour
 
     public void InstantiateDeck()
     {
+        if(transform.childCount >  0)
+            BroadcastMessage("Destroy");
         SaveLoadHandler.LoadDeckList();
         deckList = SaveLoadHandler.deckList;
         ShowDeckList();
@@ -35,7 +37,7 @@ public class DeckBoxHandler : MonoBehaviour
 
     public bool TryAddCardToDeck(CardData cardData)
     {
-        if (deckList.FindAll(card => card.GetCardInfo().cardName == cardData.GetCardInfo().cardName).Count >= 3 || deckList.Count >= 60)
+        if (deckList.FindAll(card => card.GetCardInfo().cardName == cardData.GetCardInfo().cardName).Count >= 3)
             return false;
 
         if(cardData is ExtraDeckMonsterData)

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CardDataTypes
 {
+    public static List<MonsterTags> extraDeckTags = new List<MonsterTags>() { MonsterTags.Fusion, MonsterTags.Synchro, MonsterTags.Xyz, MonsterTags.Link };
     public enum CardType
     {
         Monster,

@@ -22,6 +22,8 @@ public class TowerFactory : MonoBehaviour
     {
         GameObject newTower = Instantiate(card.GetTowerPrefab(), summonedMonsters.transform.position, Quaternion.identity, summonedMonsters.transform);
         newTower.GetComponent<TowerInfo>().cardData = card;
+        newTower.GetComponent<TowerInfo>().cardInfo = card.GetCardInfo();
+        newTower.GetComponent<TowerInfo>().MonsterInfo = card.GetMonsterInfo();
         newTower.GetComponent<SpriteRenderer>().sprite = card.GetCardInfo().sprite;
         if (card.HasCardSpecificScript())
             newTower.AddComponent(Type.GetType(card.name));

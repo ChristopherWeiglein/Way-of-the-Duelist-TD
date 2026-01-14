@@ -30,6 +30,7 @@ public class SpawnManager : MonoBehaviour
     private void Start()
     {
         waveScript = Resources.Load<WaveScript>("SceneData/WaveData/" + SceneManager.GetActiveScene().name);
+        GameObject.Find("DataPanel").GetComponent<PreviewManager>().ShowNextWave(waveScript.waveEnemyList[WaveNumber].waveList);
     }
 
 
@@ -63,5 +64,11 @@ public class SpawnManager : MonoBehaviour
             yield return null;
         GameManager.TryEndWave();
         WaveNumber++;
+        ShowPreview();
+    }
+
+    private void ShowPreview()
+    {
+        GameObject.Find("DataPanel").GetComponent<PreviewManager>().ShowNextWave(waveScript.waveEnemyList[WaveNumber].waveList);
     }
 }

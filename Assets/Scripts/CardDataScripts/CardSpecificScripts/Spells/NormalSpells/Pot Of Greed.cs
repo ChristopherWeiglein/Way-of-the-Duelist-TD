@@ -4,18 +4,18 @@ public class PotOfGreed : MonoBehaviour
 {
     private void OnEnable()
     {
-        GameManager.OnCardDrawn += CheckIfActivationIsPossible;
+        GameManager.OnOpenGameState += CheckIfActivationIsPossible;
     }
 
     private void OnDisable()
     {
-        GameManager.OnCardDrawn -= CheckIfActivationIsPossible;
+        GameManager.OnOpenGameState -= CheckIfActivationIsPossible;
     }
 
     private void CheckIfActivationIsPossible()
     {
         if(transform.parent.name == "Hand")
-            SendMessage("SetActivationPossible", DeckManager.instance.deck.Count >= 2);
+            SendMessage("SetActivationPossible", DeckManager.instance.GetDeckCount() >= 2);
     }
 
     private void ActivateCard()

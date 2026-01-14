@@ -29,7 +29,7 @@ public class CheckIfSummonIsPossible : MonoBehaviour
         if(cardData.GetCardInfo().cardType == CardDataTypes.CardType.Monster)
         {
             MonsterData monsterData = (MonsterData)cardData;
-            cardInfoManager.SetNormalSummonPossible(monsterData.GetMonsterInfo().tributeCost <= GameObject.Find("SummonedMonsters").transform.childCount && monsterData.GetMonsterInfo().tributeCost >= 0 && NormalSummonManager.instance.availableNormalSummons > 0);
+            cardInfoManager.SetNormalSummonPossible(monsterData.GetMonsterInfo().tributeCost <= GameObject.Find("SummonedMonsters").transform.childCount && monsterData.GetMonsterInfo().tributeCost >= 0 && GameObject.Find("FieldPrefab").GetComponent<NormalSummonManager>().availableNormalSummons > 0);
         }
     }
 }

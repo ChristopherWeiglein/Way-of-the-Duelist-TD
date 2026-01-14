@@ -8,8 +8,7 @@ using System.Collections;
 public class DeckManager : MonoBehaviour
 {
     public static DeckManager instance;
-    public List<CardData> deck { get; private set; } = new();
-    [SerializeField] private List<CardData> cardsforDeck;
+    [SerializeField] private List<CardData> deck = new();
     [SerializeField] private GameObject hand;
     [SerializeField] private TMP_Text text;
 
@@ -69,10 +68,31 @@ public class DeckManager : MonoBehaviour
         StartCoroutine(TutorSequence(monsterList));
     }
 
+    public void AddCardFromDeckToHand(Predicate<CardData> condition)
+    {
+        List<CardData> cardList = deck.FindAll(condition);
+        if(cardList.Count == 0)
+        {
+            TextMessageManager.instance.ShowMessageForSeconds("No legal target available", 2);
+            return;
+        }
+        StartCoroutine(TutorSequence(cardList));
+    }
+
     private IEnumerator TutorSequence(List<MonsterData> monsterList)
     {
         OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(monsterList.OfType<CardData>().ToList(), LocationDataTypes.CardLocation.Deck));
         while(OptionsManager.instance.SelectedCard.cardData == null)
+            yield return null;
+        CardFactory.instance.CreateCard(OptionsManager.instance.SelectedCard.cardData, gameObject.transform.position, hand);
+        deck.Remove(deck.Find(card => card.GetCardInfo().cardName == OptionsManager.instance.SelectedCard.cardData.GetCardInfo().cardName));
+        GameManager.OnCardAddedToHand();
+    }
+
+    private IEnumerator TutorSequence(List<CardData> cardList)
+    {
+        OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(cardList, LocationDataTypes.CardLocation.Deck));
+        while (OptionsManager.instance.SelectedCard.cardData == null)
             yield return null;
         CardFactory.instance.CreateCard(OptionsManager.instance.SelectedCard.cardData, gameObject.transform.position, hand);
         deck.Remove(deck.Find(card => card.GetCardInfo().cardName == OptionsManager.instance.SelectedCard.cardData.GetCardInfo().cardName));
@@ -93,4 +113,5 @@ public class DeckManager : MonoBehaviour
 
     public List<LocationDataTypes.CardLocationData> GetDeckCardList() => CardLocationPairFactory.AddLocationsToList(deck, LocationDataTypes.CardLocation.Deck);
 
+    public int GetDeckCount() => deck.Count;
 }

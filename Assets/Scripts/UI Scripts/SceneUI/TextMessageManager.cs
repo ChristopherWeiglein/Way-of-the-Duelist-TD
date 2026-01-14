@@ -72,7 +72,7 @@ public class TextMessageManager : MonoBehaviour
     {
         GameObject messageObject = Instantiate(textMessagePrefab, panel.transform.position, Quaternion.identity, gameObject.transform);
         messageObject.GetComponentInChildren<TMP_Text>().text = message;
-        yield return new WaitForSeconds(seconds);
+        yield return new WaitForSecondsRealtime(seconds);
         Destroy(messageObject);
     }
 }

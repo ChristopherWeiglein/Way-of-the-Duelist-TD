@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
 
     public static GameMode CurrentGameMode { get; private set; } = GameMode.Idle;
 
+    private void Start()
+    {
+        CurrentGameMode = GameMode.Idle;
+    }
+
     public enum GameMode
     {
         Idle,
@@ -49,6 +54,7 @@ public class GameManager : MonoBehaviour
     {
         OnCardDrawn?.Invoke();
         OnGameStateChanged?.Invoke();
+        OnOpenGameState?.Invoke();
     }
 
     public static void EnterTowerPlacementMode()
@@ -111,6 +117,7 @@ public class GameManager : MonoBehaviour
     {
         OnCardAdded?.Invoke();   
         OnGameStateChanged?.Invoke();
+        OnOpenGameState?.Invoke();
     }
 
 }

@@ -14,7 +14,7 @@ public class ShootProjectile : MonoBehaviour
         MonsterData monsterData = (MonsterData)towerInfo.cardData;
 
         trackEnemiesInRange = GetComponentInChildren<TrackEnemiesInRange>();
-        cooldown = 2 - monsterData.GetMonsterInfo().level / 10;
+        cooldown = 1 - monsterData.GetMonsterInfo().level / 20;
         power = monsterData.GetMonsterInfo().attack;
         StartCoroutine(ShootEnemy());
     }
