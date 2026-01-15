@@ -37,11 +37,10 @@ public class DeckBoxHandler : MonoBehaviour
 
     public bool TryAddCardToDeck(CardData cardData)
     {
-        if (deckList.FindAll(card => card.GetCardInfo().cardName == cardData.GetCardInfo().cardName).Count >= 3)
-            return false;
-
-        if(cardData is ExtraDeckMonsterData)
+        if (cardData is ExtraDeckMonsterData)
             return GameObject.Find("ExtraDeck").GetComponent<ExtraDeckBoxHandler>().TryAddCardToDeck(cardData);
+        if (deckList.FindAll(card => card.GetCardInfo().cardName == cardData.GetCardInfo().cardName).Count >= 3 || deckList.Count >= 60)
+            return false;
 
         if(!GameObject.Find("Box").GetComponent<BoxHandler>().TryGetCardFromBox(cardData))
             return false;
@@ -54,6 +53,12 @@ public class DeckBoxHandler : MonoBehaviour
 
     public void RemoveCardFromDeck(CardData cardData)
     {
+        if(cardData is ExtraDeckMonsterData)
+        {
+            GameObject.Find("ExtraDeck").GetComponent<ExtraDeckBoxHandler>().RemoveCardFromExtraDeck(cardData);
+            return;
+        }
+
         deckList.Remove(deckList.Find(card => card.name == cardData.name));
     }
 

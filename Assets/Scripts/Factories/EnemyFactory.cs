@@ -4,6 +4,7 @@ public class EnemyFactory : MonoBehaviour
 {
     public static EnemyFactory instance;
     [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject firstDestination;
 
     private void Awake()
     {
@@ -24,5 +25,6 @@ public class EnemyFactory : MonoBehaviour
         newEnemy.GetComponent<EnemyInfo>().cardInfo = monsterData.GetCardInfo();
         newEnemy.GetComponent<EnemyInfo>().MonsterInfo = monsterData.GetMonsterInfo();
         newEnemy.GetComponent<SpriteRenderer>().sprite = monsterData.GetCardInfo().sprite;
+        newEnemy.GetComponent<MoveForward>().SetNewDestination(firstDestination);
     }
 }

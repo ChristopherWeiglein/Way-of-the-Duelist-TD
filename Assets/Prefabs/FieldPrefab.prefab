@@ -296,12 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb27334ac5607bf40bd7891f9ad0f9b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardsforDeck:
-  - {fileID: 11400000, guid: 46ce5fac20549f14380eb622c2b4a2dc, type: 2}
-  - {fileID: 11400000, guid: 5277f96de54c4f44b8d000e04bed8ccb, type: 2}
-  - {fileID: 11400000, guid: 9c98f69c77dd65b4f9118c43b46704c7, type: 2}
-  - {fileID: 11400000, guid: c48774c1172a45345975b3bbb6d77190, type: 2}
-  - {fileID: 11400000, guid: c8ce80feaba617d4eb0cf5334f0f7caa, type: 2}
+  deck: []
   hand: {fileID: 2686982339102159668}
   text: {fileID: 832410720044843562}
 --- !u!1 &2686982339102159668
@@ -500,6 +495,9 @@ MonoBehaviour:
   extraDeck:
   - {fileID: 11400000, guid: bf8fde7407942ea459c6c6d1ffdd4181, type: 2}
   - {fileID: 11400000, guid: 81c6f45890d710942b3cdb0f0540c139, type: 2}
+  - {fileID: 11400000, guid: 827b2710a227e9e45b354bdb46eefe7a, type: 2}
+  - {fileID: 11400000, guid: 8a41dd66c4ca0f24f9bab96fa8fff482, type: 2}
+  - {fileID: 11400000, guid: b40602a3464a6104da69f056ae530e01, type: 2}
   availableFusionSummons: []
   extraDeckSize: {fileID: 5168931029167364467}
 --- !u!114 &3207922938325771602
@@ -807,6 +805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3072497679939079501}
+  - component: {fileID: 674086891097316145}
   m_Layer: 0
   m_Name: SummonedMonsters
   m_TagString: Untagged
@@ -829,6 +828,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 208726011450972671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674086891097316145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162897398914332958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd26a84c91982ed4bb371652d77382fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5847785846978729237
 GameObject:
   m_ObjectHideFlags: 0

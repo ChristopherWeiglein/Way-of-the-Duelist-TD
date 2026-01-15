@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5543f620e368e443949e2b08f354066, type: 3}
+  m_Name: Pack2
+  m_EditorClassIdentifier: 
+  commonPulls:
+  - {fileID: 11400000, guid: 43bc46846437ee443ba928c187ee7c5b, type: 2}
+  - {fileID: 11400000, guid: c4d03d1e3083b9847afc35109ca8e20b, type: 2}
+  - {fileID: 11400000, guid: 10792a197e4087d4aa761243cdbcf3ee, type: 2}
+  - {fileID: 11400000, guid: 8e7d8d204aa7e714c80d85191b97511d, type: 2}
+  - {fileID: 11400000, guid: b99b3208b6ed651459e4a836ace2d85f, type: 2}
+  - {fileID: 11400000, guid: cad478e5aad4f484d9922634860a1a6f, type: 2}
+  - {fileID: 11400000, guid: 54d61b1380e4f1e48b5d2ccd1a6c85f5, type: 2}
+  rarePulls:
+  - {fileID: 11400000, guid: 46ce5fac20549f14380eb622c2b4a2dc, type: 2}
+  - {fileID: 11400000, guid: 54ff336e21d165f4daa919f74bed9591, type: 2}
+  commonCardsPerPack: 4
+  rareCardsPerPack: 1
+  prizePerPack: 200

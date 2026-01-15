@@ -79,7 +79,8 @@ public class FusionManager : MonoBehaviour
     private IEnumerator FusionSummonSequence(List<LocationDataTypes.CardLocation> fusionMaterialLocations)
     {
         TextMessageManager.instance.ShowMessage("Choose a card to summon");
-        OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(ExtraDeckManager.instance.availableFusionSummons.OfType<CardData>().ToList(), LocationDataTypes.CardLocation.ExtraDeck));
+        if(!OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(ExtraDeckManager.instance.availableFusionSummons.OfType<CardData>().ToList(), LocationDataTypes.CardLocation.ExtraDeck)))
+            yield break;
         while(GameManager.CurrentGameMode == GameManager.GameMode.SelectionMode)
             yield return null;
         TextMessageManager.instance.ShowMessage("Choose the cards used as fusion material");
@@ -89,7 +90,8 @@ public class FusionManager : MonoBehaviour
         remainingFusionmaterial.AddRange(fusionMonsterData.GetFusionMaterial());
         foreach(MonsterData fusionmaterial in remainingFusionmaterial)
         {
-            OptionsManager.instance.ShowOptions(GetMonsterInRotation(fusionMaterialLocations).FindAll(card => CompareFusionMaterial((MonsterData)card.cardData, fusionmaterial)));
+            if(!OptionsManager.instance.ShowOptions(GetMonsterInRotation(fusionMaterialLocations).FindAll(card => CompareFusionMaterial((MonsterData)card.cardData, fusionmaterial))))
+                yield break;
             while (OptionsManager.instance.SelectedCard.cardData == null)
                 yield return null;
 

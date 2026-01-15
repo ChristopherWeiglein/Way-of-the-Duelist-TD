@@ -49,15 +49,20 @@ public class DeckManager : MonoBehaviour
         ShowDeckSize();
     }
 
-    public void AddMonsterFromDeckToHand(Predicate<MonsterData> condition)
+    public List<MonsterData> GetAllMonstersInDeck()
     {
         List<MonsterData> monsterList = new();
-
         foreach (CardData card in deck)
         {
             if (card.GetCardInfo().cardType == CardDataTypes.CardType.Monster)
                 monsterList.Add((MonsterData)card);
         }
+        return monsterList;
+    }
+
+    public void AddMonsterFromDeckToHand(Predicate<MonsterData> condition)
+    {
+        List<MonsterData> monsterList = GetAllMonstersInDeck();
         monsterList = monsterList.FindAll(condition);
         if (monsterList.Count == 0)
         {
@@ -81,7 +86,8 @@ public class DeckManager : MonoBehaviour
 
     private IEnumerator TutorSequence(List<MonsterData> monsterList)
     {
-        OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(monsterList.OfType<CardData>().ToList(), LocationDataTypes.CardLocation.Deck));
+        if(!OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(monsterList.OfType<CardData>().ToList(), LocationDataTypes.CardLocation.Deck)))
+            yield break;
         while(OptionsManager.instance.SelectedCard.cardData == null)
             yield return null;
         CardFactory.instance.CreateCard(OptionsManager.instance.SelectedCard.cardData, gameObject.transform.position, hand);
@@ -91,7 +97,8 @@ public class DeckManager : MonoBehaviour
 
     private IEnumerator TutorSequence(List<CardData> cardList)
     {
-        OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(cardList, LocationDataTypes.CardLocation.Deck));
+        if(!OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(cardList, LocationDataTypes.CardLocation.Deck)))
+            yield break;
         while (OptionsManager.instance.SelectedCard.cardData == null)
             yield return null;
         CardFactory.instance.CreateCard(OptionsManager.instance.SelectedCard.cardData, gameObject.transform.position, hand);
@@ -114,4 +121,20 @@ public class DeckManager : MonoBehaviour
     public List<LocationDataTypes.CardLocationData> GetDeckCardList() => CardLocationPairFactory.AddLocationsToList(deck, LocationDataTypes.CardLocation.Deck);
 
     public int GetDeckCount() => deck.Count;
+
+    public void SummonMonsterFromDeck(Predicate<MonsterData> condition)
+    {
+        StartCoroutine(SummonFromDeckSequence(condition));
+    }
+
+    private IEnumerator SummonFromDeckSequence(Predicate<MonsterData> condition)
+    {
+        if(!OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(GetAllMonstersInDeck().FindAll(condition).OfType<CardData>().ToList(), LocationDataTypes.CardLocation.Deck)))
+            yield break;
+        while (OptionsManager.instance.SelectedCard.cardData == null)
+            yield return null;
+        deck.Remove(deck.Find(card => card.GetCardInfo().cardName == OptionsManager.instance.SelectedCard.cardData.GetCardInfo().cardName));
+        SummonManager.instance.SummonMonster(OptionsManager.instance.SelectedCard.cardData as MonsterData);
+        ShowDeckSize();
+    }
 }

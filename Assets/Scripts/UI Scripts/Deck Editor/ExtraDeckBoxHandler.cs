@@ -37,7 +37,7 @@ public class ExtraDeckBoxHandler : MonoBehaviour
 
     public bool TryAddCardToDeck(CardData cardData)
     {
-        if (extraDeckList.FindAll(card => card.GetCardInfo().cardName == cardData.GetCardInfo().cardName).Count >= 3)
+        if (extraDeckList.FindAll(card => card.GetCardInfo().cardName == cardData.GetCardInfo().cardName).Count >= 3 || extraDeckList.Count >= 15)
             return false;
 
         if (!GameObject.Find("Box").GetComponent<BoxHandler>().TryGetCardFromBox(cardData))
@@ -47,6 +47,11 @@ public class ExtraDeckBoxHandler : MonoBehaviour
         DeckEditorCardFactory.instance.CreateDeckEditorCard(cardData, transform);
 
         return true;
+    }
+
+    public void RemoveCardFromExtraDeck(CardData cardData)
+    {
+        extraDeckList.Remove(extraDeckList.Find(card => card.name == cardData.name));
     }
 
     public List<CardData> GetExtraDeckList() => extraDeckList;

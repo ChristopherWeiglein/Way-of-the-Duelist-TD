@@ -54,7 +54,7 @@ public class CheckForAvailableFusionSummons : MonoBehaviour
         }
         foreach(Transform cardTransform in summonedMonsters.transform)
         {
-            monsterInRotation.Add((MonsterData)cardTransform.gameObject.GetComponent<TowerInfo>().cardData);
+            monsterInRotation.Add((MonsterData)cardTransform.gameObject.GetComponent<InfoRoot>().cardData);
         }
         return monsterInRotation;
     }

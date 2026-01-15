@@ -20,13 +20,18 @@ public class OptionsManager : MonoBehaviour
         }
     }
 
-    public void ShowOptions(List<LocationDataTypes.CardLocationData> cardData)
+    public bool ShowOptions(List<LocationDataTypes.CardLocationData> cardData)
     {
         if (cardData.Count <= 0)
-            return;
+        {
+            TextMessageManager.instance.ShowMessageForSeconds("No target available", 3);
+            return false;
+        }
+            
 
         SelectedCard = new LocationDataTypes.CardLocationData();
         StartCoroutine(SelectionSequence(cardData));
+        return true;
     }
 
     public void SelectCard(LocationDataTypes.CardLocationData cardData)

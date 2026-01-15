@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e5cfbd4daeaaa409acb6107bb6ef84, type: 3}
+  m_Name: ShiningAngel
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Shining Angel
+    cardText: If this blocker is destroyed by battle, summon 1 light monster with
+      1500 or less atk from your deck at the start of your next turn
+    sprite: {fileID: -2368558634422393691, guid: a63a7d4653891da4ba077007ee8e5d53, type: 3}
+    cardType: 0
+  hasCardSpecificScript: 1
+  monsterInfo:
+    attribute: 4
+    type: 7
+    attack: 1400
+    defense: 800
+    level: 4
+    tributeCost: 0
+    monsterTags: 01000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 4d62a06e6aa629b4691bfca3a793b459, type: 3}

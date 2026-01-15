@@ -23,7 +23,7 @@ MonoBehaviour:
     attribute: 0
     type: 24
     attack: 1350
-    defense: 1400
+    defense: 0
     level: 2
     tributeCost: 0
     monsterTags: 00000000

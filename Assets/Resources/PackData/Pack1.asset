@@ -34,14 +34,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
   - {fileID: 11400000, guid: ff82879217b5d4249809cf09c1e8e572, type: 2}
   rarePulls:
-  - {fileID: 11400000, guid: bf8fde7407942ea459c6c6d1ffdd4181, type: 2}
   - {fileID: 11400000, guid: 81c6f45890d710942b3cdb0f0540c139, type: 2}
   - {fileID: 11400000, guid: c8ce80feaba617d4eb0cf5334f0f7caa, type: 2}
   - {fileID: 11400000, guid: 5baaab489508b964ea10df7af707dcff, type: 2}
   - {fileID: 11400000, guid: b40602a3464a6104da69f056ae530e01, type: 2}
   - {fileID: 11400000, guid: dd17083956754d1478fc566b593c716b, type: 2}
   - {fileID: 11400000, guid: 8a41dd66c4ca0f24f9bab96fa8fff482, type: 2}
-  - {fileID: 11400000, guid: 46ce5fac20549f14380eb622c2b4a2dc, type: 2}
+  - {fileID: 11400000, guid: bf8fde7407942ea459c6c6d1ffdd4181, type: 2}
   - {fileID: 11400000, guid: a9dd0b5ae7942d94d94fe4960722f68d, type: 2}
   - {fileID: 11400000, guid: 5277f96de54c4f44b8d000e04bed8ccb, type: 2}
   - {fileID: 11400000, guid: 9fd5fb7cce4f1574c9734bc65df285f2, type: 2}

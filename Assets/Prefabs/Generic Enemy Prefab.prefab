@@ -343,14 +343,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardData: {fileID: 0}
-  monsterInfo:
-    attribute: 0
-    type: 0
-    attack: 0
-    defense: 0
-    level: 0
-    tributeCost: 0
-    monsterTags: 
+  cardInfo:
+    cardName: 
+    cardText: 
+    sprite: {fileID: 0}
+    cardType: 0
 --- !u!114 &6947831617304373103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c84aeef11bd4824284580232816005b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
   stats: {fileID: -1863833224960997284}
 --- !u!61 &8284538166879325285
 BoxCollider2D:
@@ -464,7 +462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce3920888c404d499526f3bcbed55b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: -1863833224960997284}
 --- !u!1 &5980137963651119797
 GameObject:
   m_ObjectHideFlags: 0

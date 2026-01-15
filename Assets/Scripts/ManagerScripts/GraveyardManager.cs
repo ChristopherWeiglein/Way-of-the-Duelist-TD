@@ -108,7 +108,8 @@ public class GraveyardManager : MonoBehaviour
             yield return null;
         List<LocationDataTypes.CardLocationData> graveyardCardlist = GetMonsterInGrave();
         List<MonsterData> cardOptions = CardLocationPairFactory.RemoveLocationsFromMonsterList(graveyardCardlist).FindAll(condition);
-        OptionsManager.instance.ShowOptions(graveyardCardlist.FindAll(card => cardOptions.Contains(card.cardData as MonsterData)));
+        if (!OptionsManager.instance.ShowOptions(graveyardCardlist.FindAll(card => cardOptions.Contains(card.cardData as MonsterData))))
+            yield break;
         while (OptionsManager.instance.SelectedCard.cardData == null)
             yield return null;
         Destroy(OptionsManager.instance.SelectedCard.correlatingGameObject);
@@ -127,12 +128,14 @@ public class GraveyardManager : MonoBehaviour
             yield return null;
         List<LocationDataTypes.CardLocationData> graveyardCardlist = GetGraveyardCardList();
         List<CardData> cardOptions = CardLocationPairFactory.RemoveLocationsFromCardList(graveyardCardlist).FindAll(condition);
-        OptionsManager.instance.ShowOptions(graveyardCardlist.FindAll(card => cardOptions.Contains(card.cardData)));
+        if (!OptionsManager.instance.ShowOptions(graveyardCardlist.FindAll(card => cardOptions.Contains(card.cardData))))
+            yield break;
         while(OptionsManager.instance.SelectedCard.cardData == null)
             yield return null;
         Destroy(OptionsManager.instance.SelectedCard.correlatingGameObject);
         CardFactory.instance.CreateCard(OptionsManager.instance.SelectedCard.cardData, transform.position, GameObject.Find("Hand"));
         ShowGraveyardSize();
+        GameManager.OnCardAddedToHand();
     }
 
     public void AddMonsterFromGraveToHand(Predicate<MonsterData> condition)
@@ -151,12 +154,14 @@ public class GraveyardManager : MonoBehaviour
             yield return null;
         List<LocationDataTypes.CardLocationData> graveyardCardlist = GetMonsterInGrave();
         List<MonsterData> cardOptions = CardLocationPairFactory.RemoveLocationsFromMonsterList(graveyardCardlist).FindAll(condition);
-        OptionsManager.instance.ShowOptions(graveyardCardlist.FindAll(card => cardOptions.Contains(card.cardData as MonsterData)));
+        if(!OptionsManager.instance.ShowOptions(graveyardCardlist.FindAll(card => cardOptions.Contains(card.cardData as MonsterData))))
+            yield break;
         while (OptionsManager.instance.SelectedCard.cardData == null)
             yield return null;
         Destroy(OptionsManager.instance.SelectedCard.correlatingGameObject);
         CardFactory.instance.CreateCard(OptionsManager.instance.SelectedCard.cardData, transform.position, GameObject.Find("Hand"));
         ShowGraveyardSize();
+        GameManager.OnCardAddedToHand();
     }
 
     private IEnumerator AddBackSequence(Predicate<MonsterData> condition, List<CardDataTypes.CardTags> cardTags)
@@ -165,11 +170,13 @@ public class GraveyardManager : MonoBehaviour
             yield return null;
         List<LocationDataTypes.CardLocationData> graveyardCardlist = GetMonsterInGrave(cardTags);
         List<MonsterData> cardOptions = CardLocationPairFactory.RemoveLocationsFromMonsterList(graveyardCardlist).FindAll(condition);
-        OptionsManager.instance.ShowOptions(graveyardCardlist.FindAll(card => cardOptions.FindAll(option => option.GetCardInfo().cardName == card.cardData.GetCardInfo().cardName).Count > 0));
+        if(!OptionsManager.instance.ShowOptions(graveyardCardlist.FindAll(card => cardOptions.FindAll(option => option.GetCardInfo().cardName == card.cardData.GetCardInfo().cardName).Count > 0)))
+            yield break;
         while (OptionsManager.instance.SelectedCard.cardData == null)
             yield return null;
         Destroy(OptionsManager.instance.SelectedCard.correlatingGameObject);
         CardFactory.instance.CreateCard(OptionsManager.instance.SelectedCard.cardData, transform.position, GameObject.Find("Hand"));
         ShowGraveyardSize();
+        GameManager.OnCardAddedToHand();
     }
 }

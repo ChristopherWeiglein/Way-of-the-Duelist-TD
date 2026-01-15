@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardInfo:
     cardName: Dark Magician
-    cardText: A playful little fiend that lurks in the dark, waiting to attack an
-      unwary enemy.
+    cardText: '''''The ultimate wizard in terms of attack and defense.'''''
     sprite: {fileID: -8580757946128589708, guid: a5b62cc3f02a3dc44ad8e8fba0757339, type: 3}
     cardType: 0
   hasCardSpecificScript: 0

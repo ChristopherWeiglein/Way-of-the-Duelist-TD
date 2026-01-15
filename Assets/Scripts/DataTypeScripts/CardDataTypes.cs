@@ -72,7 +72,9 @@ public class CardDataTypes
         UsedAsFusionMaterial,
         SentFromField,
         SentFromDeck,
-        SentFromHand
+        SentFromHand,
+        DestroyedByBattle,
+        DestroyedByCardEffect
     }
 
     [Serializable]
