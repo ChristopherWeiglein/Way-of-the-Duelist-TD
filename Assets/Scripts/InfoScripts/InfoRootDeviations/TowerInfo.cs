@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using static TowerDataTypes;
 
 public class TowerInfo : InfoRoot, IMonsterCard
 {
     public CardDataTypes.MonsterInfo MonsterInfo { get; set; }
     public static float baseRange = 50f;
+    public TowerTarget towerTarget;
 
 
     private void Start()

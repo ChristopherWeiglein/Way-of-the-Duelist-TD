@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ShowDetailViewOnHover : MonoBehaviour
+public class ShowDetailViewOnHover : MonoBehaviour, IPointerEnterHandler
 {
     private InfoRoot info;
 
@@ -10,6 +11,11 @@ public class ShowDetailViewOnHover : MonoBehaviour
     }
 
     private void OnMouseEnter()
+    {
+        GameObject.Find("CardDetailPanel").GetComponent<DetailViewUI>().SetDetailView(info.cardData);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
         GameObject.Find("CardDetailPanel").GetComponent<DetailViewUI>().SetDetailView(info.cardData);
     }

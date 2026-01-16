@@ -14,14 +14,11 @@ GameObject:
   - component: {fileID: 6662872928059040876}
   - component: {fileID: -665339793065966891}
   - component: {fileID: 3412184393130396646}
-  - component: {fileID: 4667015360276722074}
-  - component: {fileID: 8771256382283378168}
   - component: {fileID: -6422587541673893982}
   - component: {fileID: -8469152978971816716}
   - component: {fileID: 5171055184462957104}
-  - component: {fileID: 9168479017047337213}
   m_Layer: 7
-  m_Name: Tower
+  m_Name: Buffer
   m_TagString: Towers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 945078349
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1819830194433888264, guid: 4c76b3a67e30d064383180d840871928, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +92,7 @@ SpriteRenderer:
   m_Size: {x: 8.13, y: 11.85}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &5587668532673672823
@@ -202,33 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ee4eb208be8ac43818b8dd6b408c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4667015360276722074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577506767175936287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 129ccd1d6d611bb47b579e17ec658f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerInfo: {fileID: -665339793065966891}
-  projectile: {fileID: 7918074366818121696, guid: d499f12f82af61b4b9efee0b0cf42ff1, type: 3}
---- !u!114 &8771256382283378168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577506767175936287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e92b5604b748d94bbbc0f2f45ed4083, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerInfo: {fileID: -665339793065966891}
 --- !u!114 &-6422587541673893982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,19 +235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61db9f5f542ffb428b99d9da8547323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9168479017047337213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577506767175936287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1eb5a322276927499233c2ff0cad642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerInfo: {fileID: -665339793065966891}
 --- !u!1 &4135048991265714402
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,9 +245,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8461612372882792179}
   - component: {fileID: 926972242898327758}
-  - component: {fileID: 2877987430459878318}
   - component: {fileID: 2429072638410988015}
   - component: {fileID: 7763473870389521468}
+  - component: {fileID: 5940291075004489327}
   m_Layer: 2
   m_Name: Range
   m_TagString: Untagged
@@ -358,7 +315,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 1, a: 0.39215687}
+  m_Color: {r: 0.50450444, g: 1, b: 0, a: 0.39215687}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -368,18 +325,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2877987430459878318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4135048991265714402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b32871460ccac814d9d83efab853a0c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &2429072638410988015
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -443,3 +388,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5940291075004489327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4135048991265714402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8caa32ce83eb5124dbce2ee34d1936e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  range: 0
+  towersInRange: []

@@ -49,4 +49,6 @@ public class ShootProjectile : MonoBehaviour
         projectileData.target = trackEnemiesInRange.GetEnemiesInRange()[0];
         projectileData.power = power;
     }
+
+    public float GetSpeed() => cooldown;
 }

@@ -9,7 +9,7 @@ public class EndOfRoad : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             int enemyattack = collision.gameObject.GetComponent<EnemyInfo>().MonsterInfo.attack;
-            PlayerHealthManager.instance.ChangePlayerHealth((int)((enemyattack > 0 ? enemyattack : damageForZeroAttackEnemies) * -Mathf.Pow(EnemyHealthManager.EnemyHealthMultiplierPerWave, SpawnManager.instance.WaveNumber) / 10));
+            PlayerHealthManager.instance.ChangePlayerHealth(-enemyattack);
             Destroy(collision.gameObject);
         }
     }

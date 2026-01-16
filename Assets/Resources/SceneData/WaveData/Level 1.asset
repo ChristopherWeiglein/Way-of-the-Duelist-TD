@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveEnemyList:
   - waveList:
-    - enemy: {fileID: 11400000, guid: dd17083956754d1478fc566b593c716b, type: 2}
-      amount: 3
+    - enemy: {fileID: 11400000, guid: b40602a3464a6104da69f056ae530e01, type: 2}
+      amount: 5
   - waveList:
-    - enemy: {fileID: 11400000, guid: dd17083956754d1478fc566b593c716b, type: 2}
-      amount: 10
+    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
+      amount: 20
   - waveList:
     - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
       amount: 10

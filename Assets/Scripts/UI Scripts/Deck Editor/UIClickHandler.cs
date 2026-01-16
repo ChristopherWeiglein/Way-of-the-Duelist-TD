@@ -24,4 +24,5 @@ public class UIClickHandler : MonoBehaviour, IPointerClickHandler
             onMiddleClick.Invoke();
         }
     }
+
 }

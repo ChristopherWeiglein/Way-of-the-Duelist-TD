@@ -5,7 +5,7 @@ public class BoxScrollHandler : MonoBehaviour
     private float scale = 10f;
     private GameObject firstChild;
     private GameObject lastChild;
-    private const float firstPosition = -70f;
+    private const float firstPosition = -5f;
     private const float lastPosition = -820f;
 
     private void OnEnable()

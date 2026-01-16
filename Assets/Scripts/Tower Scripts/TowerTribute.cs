@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class TowerTribute : MonoBehaviour
 {
-    [SerializeField] private TowerInfo towerInfo;
+    [SerializeField] private InfoRoot towerInfo;
     private void OnMouseDown()
     {
         switch (GameManager.CurrentGameMode)

@@ -4,7 +4,7 @@ public class CardMovement : MonoBehaviour
 {
     private const float cardSpeed = 10f;
     private Vector3 offset;
-    private const int cardsInARow = 6;
+    private const int cardsInARow = 11;
     private const float cardSizeX = 1.7f;
     private const float cardSizeY = 2.5f;
 

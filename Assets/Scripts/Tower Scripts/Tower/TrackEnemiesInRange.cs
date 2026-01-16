@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class TrackEnemiesInRange : MonoBehaviour
 {
@@ -36,5 +37,20 @@ public class TrackEnemiesInRange : MonoBehaviour
         }
     }
 
-    public List<GameObject> GetEnemiesInRange() => enemiesInRange;
+    public List<GameObject> GetEnemiesInRange()
+    {
+        switch (transform.parent.GetComponent<TowerInfo>().towerTarget)
+        {
+            case TowerDataTypes.TowerTarget.First:
+                return enemiesInRange.OrderByDescending(enemy => enemy.GetComponent<MoveForward>().GetDistance()).ToList();
+            case TowerDataTypes.TowerTarget.Last:
+                return enemiesInRange.OrderBy(enemy => enemy.GetComponent<MoveForward>().GetDistance()).ToList();
+            case TowerDataTypes.TowerTarget.MostHealth:
+                return enemiesInRange.OrderByDescending(enemy => enemy.GetComponent<EnemyHealthManager>().health).ToList();
+            case TowerDataTypes.TowerTarget.LeastHealth:
+                return enemiesInRange.OrderBy(enemy => enemy.GetComponent<EnemyHealthManager>().health).ToList();
+            default:
+                return enemiesInRange;
+        }
+    }
 }

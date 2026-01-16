@@ -6,7 +6,7 @@ public class ShowEnemyDetailsOnClick : MonoBehaviour
 
     public void ShowDetails()
     {
-        GameObject.Find("PreviewDetail").GetComponent<PreviewDetail>().ShowValues(previewInfo.health, previewInfo.speed);
+        GameObject.Find("PreviewDetail").GetComponent<PreviewDetail>().ShowValues(previewInfo.health, previewInfo.speed, previewInfo.MonsterInfo.attack, previewInfo.cardInfo.cardName);
         GetComponent<HighlightCard>().HighlightThisCard();
     }
 }

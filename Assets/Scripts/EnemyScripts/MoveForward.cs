@@ -33,5 +33,6 @@ public class MoveForward : MonoBehaviour
     public void SetBack()
     {
         transform.position = Vector3.MoveTowards(transform.position, destination.transform.position, -speed * Time.deltaTime * 20);
+        distanceWalked -= speed * Time.deltaTime * 20;
     }
 }

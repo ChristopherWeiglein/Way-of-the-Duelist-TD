@@ -20,11 +20,11 @@ MonoBehaviour:
     cardType: 0
   hasCardSpecificScript: 0
   monsterInfo:
-    attribute: 0
-    type: 0
-    attack: 0
-    defense: 0
-    level: 0
+    attribute: 2
+    type: 24
+    attack: 1200
+    defense: 1400
+    level: 4
     tributeCost: 0
-    monsterTags: 
-  towerPrefab: {fileID: 0}
+    monsterTags: 01000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 4d62a06e6aa629b4691bfca3a793b459, type: 3}
