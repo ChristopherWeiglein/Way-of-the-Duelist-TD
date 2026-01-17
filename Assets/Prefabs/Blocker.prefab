@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5467001455212102064}
   - component: {fileID: 4488933873766851919}
   - component: {fileID: 3225758948696702543}
-  - component: {fileID: 4715318340303102966}
+  - component: {fileID: 5150054014152919934}
   m_Layer: 7
   m_Name: Blocker
   m_TagString: Blocker
@@ -232,7 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a7b2d7b268cda43969a7b2c7498f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1450
   healthBarBehaviour: {fileID: 3044231094383415386}
 --- !u!114 &4488933873766851919
 MonoBehaviour:
@@ -264,33 +263,24 @@ MonoBehaviour:
     cardText: 
     sprite: {fileID: 0}
     cardType: 0
---- !u!50 &4715318340303102966
-Rigidbody2D:
-  serializedVersion: 5
+  buffs: []
+  defense: 0
+  attack: 0
+  healthManager: {fileID: 5467001455212102064}
+--- !u!114 &5150054014152919934
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577506767175936287}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6bb7a7ccd48c34c89d699965328204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockerInfo: {fileID: 3225758948696702543}
+  healthManager: {fileID: 5467001455212102064}
 --- !u!1 &1994892902159636381
 GameObject:
   m_ObjectHideFlags: 0

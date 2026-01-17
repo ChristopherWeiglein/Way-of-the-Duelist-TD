@@ -7,11 +7,12 @@ public class TrackTowersInRange : MonoBehaviour
     [SerializeField] private ContactFilter2D contactFilter;
     [SerializeField] private int range;
     [SerializeField] private List<GameObject> towersInRange = new();
+    public string TagToTrack = "Towers";
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Towers"))
+        if (!collision.CompareTag(TagToTrack))
             return;
 
         towersInRange.Add(collision.gameObject);
@@ -19,7 +20,7 @@ public class TrackTowersInRange : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(!collision.CompareTag("Towers"))
+        if(!collision.CompareTag(TagToTrack))
             return;
 
         towersInRange.Remove(collision.gameObject);

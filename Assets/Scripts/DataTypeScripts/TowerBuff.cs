@@ -13,7 +13,8 @@ public class TowerBuff
     {
         Attack,
         Speed,
-        Range
+        Range,
+        Defense
     }
 
     public TowerBuff(GameObject sender, BuffStat stat, float buffValue)
@@ -22,4 +23,6 @@ public class TowerBuff
         this.stat = stat;
         this.buffValue = buffValue;
     }
+
+
 }

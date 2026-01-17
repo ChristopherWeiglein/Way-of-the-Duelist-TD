@@ -10,7 +10,7 @@ public class MoveForward : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        speed = Mathf.Pow(1.2f, 1000f / ((float)stats.MonsterInfo.defense + 100f)) / ((float)stats.MonsterInfo.level / 2); ;
+        speed = 1 + ((float)stats.MonsterInfo.level / 4); ;
     }
 
     // Update is called once per frame

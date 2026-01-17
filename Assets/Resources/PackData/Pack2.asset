@@ -33,6 +33,26 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0d1cd40e8fa48334c8e3a2a82166a66b, type: 2}
   - {fileID: 11400000, guid: f6f48bb87c698084c9c812e84633cd5e, type: 2}
   - {fileID: 11400000, guid: c47dcc2fcf721cd409be099d55a79771, type: 2}
+  - {fileID: 11400000, guid: c53dee4d5da0f7d4b95d5fad2365bc5b, type: 2}
+  - {fileID: 11400000, guid: b5fe3883f99b4c444b9248bc0b339b86, type: 2}
+  - {fileID: 11400000, guid: 679193f4daf8a964b929e9a871a8ba61, type: 2}
+  - {fileID: 11400000, guid: fcf37ff39fe9dda44a85f12bfb7b66b4, type: 2}
+  - {fileID: 11400000, guid: c6d6abf1afc9bc64696f5bd54c179610, type: 2}
+  - {fileID: 11400000, guid: dc7af9d7b9edcf540af4820db59f90c8, type: 2}
+  - {fileID: 11400000, guid: 4c3aa01285383bf4ab0bbe118212a2a9, type: 2}
+  - {fileID: 11400000, guid: c6ee830d4ea6a6144872d2068a306e10, type: 2}
+  - {fileID: 11400000, guid: a789ba4b5ee5ac04f8bffb7a6658d9a8, type: 2}
+  - {fileID: 11400000, guid: adb9499b15a14a144a1497609a31e967, type: 2}
+  - {fileID: 11400000, guid: 45dbb4cf5b38ca64fac119e207a5b32c, type: 2}
+  - {fileID: 11400000, guid: d78d6f77fad4a8e4695e6adb9f0300c2, type: 2}
+  - {fileID: 11400000, guid: a2c8bf0ba07f2fa4785668002f1eca06, type: 2}
+  - {fileID: 11400000, guid: fe75cf51fed615547b193cdd00a15ffd, type: 2}
+  - {fileID: 11400000, guid: 256c2d3c24e5c8948900c546b0d74304, type: 2}
+  - {fileID: 11400000, guid: 30d1ba62561144b46801a515e104247a, type: 2}
+  - {fileID: 11400000, guid: 5e801aab6bb6a3641940a4fe31421ff7, type: 2}
+  - {fileID: 11400000, guid: c82679a131cc4bd48a5693d0484ad790, type: 2}
+  - {fileID: 11400000, guid: 37d78c5aefffdf74895b88b5fc564648, type: 2}
+  - {fileID: 11400000, guid: f31d49f17d40b734cb9680261dbbe674, type: 2}
   rarePulls:
   - {fileID: 11400000, guid: 46ce5fac20549f14380eb622c2b4a2dc, type: 2}
   - {fileID: 11400000, guid: d4e84d3297e688649bfaf1d43c1074cc, type: 2}
@@ -42,6 +62,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18ed76a6cc394414fadfc4d04762a1c9, type: 2}
   - {fileID: 11400000, guid: 48bc3b8225a077b4c8e52ad53e726d64, type: 2}
   - {fileID: 11400000, guid: 3e7324ffec89e284ba43e15d21704b09, type: 2}
+  - {fileID: 11400000, guid: dd50a5f9e77ac4a43a3ea2158eac78e8, type: 2}
+  - {fileID: 11400000, guid: 2735d0583c10f4f4dbb3366d65eabe85, type: 2}
   commonCardsPerPack: 4
   rareCardsPerPack: 1
-  prizePerPack: 200
+  prizePerPack: 1000

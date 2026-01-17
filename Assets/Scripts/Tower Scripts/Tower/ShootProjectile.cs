@@ -25,7 +25,7 @@ public class ShootProjectile : MonoBehaviour
 
     private bool ShootProjectileAtEnemy()
     {
-        if(trackEnemiesInRange.GetEnemiesInRange().Count > 0 && !GetComponent<TowerPlacement>().enabled)
+        if(trackEnemiesInRange.GetEnemiesInRange()?.Count > 0 && !GetComponent<TowerPlacement>().enabled)
         {
             CreateProjectile();
             return false;

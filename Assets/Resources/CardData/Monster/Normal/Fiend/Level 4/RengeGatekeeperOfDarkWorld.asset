@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e5cfbd4daeaaa409acb6107bb6ef84, type: 3}
+  m_Name: RengeGatekeeperOfDarkWorld
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Renge, Gatekeeper Of Dark World
+    cardText: His renowned athletic physique has made him famous with the populace
+      of Dark World. They call him "Iron Wall Renge" because no one can break through
+      his incredible defenses.
+    sprite: {fileID: 357318278065152185, guid: 6dc539a09d90c4340b824dd9217a7972, type: 3}
+    cardType: 0
+  hasCardSpecificScript: 0
+  monsterInfo:
+    attribute: 0
+    type: 8
+    attack: 100
+    defense: 2100
+    level: 4
+    tributeCost: 0
+    monsterTags: 00000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 4d62a06e6aa629b4691bfca3a793b459, type: 3}

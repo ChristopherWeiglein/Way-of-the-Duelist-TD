@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e5cfbd4daeaaa409acb6107bb6ef84, type: 3}
+  m_Name: MelffyRabby
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Melffy Rabby
+    cardText: '''''Rabby''s up on that favorite stump again, looking all around the
+      forest at all the fluffy friends! Do you like exploring, too? Good! Let''s
+      go find more Melffy friends with Rabby!'''''
+    sprite: {fileID: 8357560363116352597, guid: 671ba29f6006663439ec58dc4ec75319, type: 3}
+    cardType: 0
+  hasCardSpecificScript: 0
+  monsterInfo:
+    attribute: 2
+    type: 1
+    attack: 0
+    defense: 2100
+    level: 2
+    tributeCost: 0
+    monsterTags: 00000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 4d62a06e6aa629b4691bfca3a793b459, type: 3}

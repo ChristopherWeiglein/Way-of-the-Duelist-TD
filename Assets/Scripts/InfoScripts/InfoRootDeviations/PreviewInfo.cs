@@ -10,7 +10,7 @@ public class PreviewInfo : InfoRoot, IMonsterCard
     public void CalculateStats()
     {
         health = (int)((MonsterInfo.defense != 0 ? MonsterInfo.defense : 100) * Mathf.Pow(EnemyHealthManager.EnemyHealthMultiplierPerWave, SpawnManager.instance.WaveNumber));
-        speed = Mathf.Pow(1.2f, 1000f / ((float)MonsterInfo.defense + 100f)) / ((float)MonsterInfo.level/2);
+        speed = 1 + (float)MonsterInfo.level/4;
     }
 
 }

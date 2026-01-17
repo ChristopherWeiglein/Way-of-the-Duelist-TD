@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e5cfbd4daeaaa409acb6107bb6ef84, type: 3}
+  m_Name: Hyo
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Gyo
+    cardText: '''''None can survive the cold touch of this sub-zero warrior.'''''
+    sprite: {fileID: 278215627614352811, guid: ce94e9ca3ffdcaf4495567db4a18e67b, type: 3}
+    cardType: 0
+  hasCardSpecificScript: 0
+  monsterInfo:
+    attribute: 5
+    type: 21
+    attack: 800
+    defense: 1200
+    level: 3
+    tributeCost: 0
+    monsterTags: 00000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e5cfbd4daeaaa409acb6107bb6ef84, type: 3}
+  m_Name: CrownedByTheWorldChalice
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Crowned By The World Chalice
+    cardText: With her magical staff, she can channel the living heart of her world
+      to shield her people from the Mekk-Knights that have overrun it.
+    sprite: {fileID: 512771002109769843, guid: c2f8c3f2fca720f49b5e71bfa5bf950e, type: 3}
+    cardType: 0
+  hasCardSpecificScript: 0
+  monsterInfo:
+    attribute: 5
+    type: 19
+    attack: 0
+    defense: 2100
+    level: 2
+    tributeCost: 0
+    monsterTags: 00000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 4d62a06e6aa629b4691bfca3a793b459, type: 3}

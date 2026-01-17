@@ -33,6 +33,26 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4bdd9678569d9644e8261d9eafbff2c7, type: 2}
   - {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
   - {fileID: 11400000, guid: ff82879217b5d4249809cf09c1e8e572, type: 2}
+  - {fileID: 11400000, guid: 1d028b37b70c95f4dbf81350ab514707, type: 2}
+  - {fileID: 11400000, guid: 78133fb203658364a8aec49bba434a7a, type: 2}
+  - {fileID: 11400000, guid: b226f33ecdddb7e4a9d08cfe5e0cb34e, type: 2}
+  - {fileID: 11400000, guid: b0717744075547a4da32e1d22d7c4eb6, type: 2}
+  - {fileID: 11400000, guid: 45624a3df530215429ed645767ed33ff, type: 2}
+  - {fileID: 11400000, guid: ab7cdeee9c0a87e4daafa9b7aba792e8, type: 2}
+  - {fileID: 11400000, guid: 51abcd9fc31f0e34b8a11a6d0c949af3, type: 2}
+  - {fileID: 11400000, guid: 46353aeba0faebd4f8725603124d398e, type: 2}
+  - {fileID: 11400000, guid: d5f79bc856e00f142857e986386b8d4d, type: 2}
+  - {fileID: 11400000, guid: 3474d8c66970e4242b11cc69461907df, type: 2}
+  - {fileID: 11400000, guid: 25c76757776ed264796dba1d681a39fa, type: 2}
+  - {fileID: 11400000, guid: 2cef33e651edee545a9b4c1f9ffd7ac9, type: 2}
+  - {fileID: 11400000, guid: 49e4a8ba6ce42b045b9ecbea215fce67, type: 2}
+  - {fileID: 11400000, guid: 84df83a5e6bdc9740bbe744d6194bd22, type: 2}
+  - {fileID: 11400000, guid: beb8b3df3599d464f890344a3174754f, type: 2}
+  - {fileID: 11400000, guid: 30c93693a9d8e524980540b880522470, type: 2}
+  - {fileID: 11400000, guid: 621ef8071885ea14d9af0ea2a48b280b, type: 2}
+  - {fileID: 11400000, guid: 17b425c6a1e53364a8342b028440e899, type: 2}
+  - {fileID: 11400000, guid: 5c428675f5c124647a7c8632283a59fd, type: 2}
+  - {fileID: 11400000, guid: 49120e177047e5e45bc9888942789945, type: 2}
   rarePulls:
   - {fileID: 11400000, guid: 81c6f45890d710942b3cdb0f0540c139, type: 2}
   - {fileID: 11400000, guid: c8ce80feaba617d4eb0cf5334f0f7caa, type: 2}
@@ -46,4 +66,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9fd5fb7cce4f1574c9734bc65df285f2, type: 2}
   commonCardsPerPack: 4
   rareCardsPerPack: 1
-  prizePerPack: 100
+  prizePerPack: 1000

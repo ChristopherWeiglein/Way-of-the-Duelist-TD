@@ -14,68 +14,144 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveEnemyList:
   - waveList:
-    - enemy: {fileID: 11400000, guid: b40602a3464a6104da69f056ae530e01, type: 2}
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 3
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 4
+  - waveList:
+    - enemy: {fileID: 11400000, guid: a098aeb8cc117fc4593c85555f01dd40, type: 2}
+      amount: 5
+    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
+      amount: 3
+  - waveList:
+    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
+      amount: 10
+    - enemy: {fileID: 11400000, guid: e8873ef2b5138f246b8a36288edbea84, type: 2}
       amount: 5
   - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
+    - enemy: {fileID: 11400000, guid: 420447e852692a34997c982931ed92f5, type: 2}
+      amount: 10
+    - enemy: {fileID: 11400000, guid: 2cef33e651edee545a9b4c1f9ffd7ac9, type: 2}
+      amount: 3
+  - waveList:
+    - enemy: {fileID: 11400000, guid: 420447e852692a34997c982931ed92f5, type: 2}
+      amount: 10
+    - enemy: {fileID: 11400000, guid: a9dd0b5ae7942d94d94fe4960722f68d, type: 2}
+      amount: 10
+  - waveList:
+    - enemy: {fileID: 11400000, guid: 420447e852692a34997c982931ed92f5, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: a9dd0b5ae7942d94d94fe4960722f68d, type: 2}
+      amount: 10
+    - enemy: {fileID: 11400000, guid: 84df83a5e6bdc9740bbe744d6194bd22, type: 2}
+      amount: 5
+  - waveList:
+    - enemy: {fileID: 11400000, guid: 78133fb203658364a8aec49bba434a7a, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: a9dd0b5ae7942d94d94fe4960722f68d, type: 2}
       amount: 20
   - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
+    - enemy: {fileID: 11400000, guid: 51abcd9fc31f0e34b8a11a6d0c949af3, type: 2}
       amount: 10
   - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
+    - enemy: {fileID: 11400000, guid: b0717744075547a4da32e1d22d7c4eb6, type: 2}
+      amount: 33
+    - enemy: {fileID: 11400000, guid: 45624a3df530215429ed645767ed33ff, type: 2}
+      amount: 33
+    - enemy: {fileID: 11400000, guid: ab7cdeee9c0a87e4daafa9b7aba792e8, type: 2}
+      amount: 33
+  - waveList:
+    - enemy: {fileID: 11400000, guid: 420447e852692a34997c982931ed92f5, type: 2}
+      amount: 30
+    - enemy: {fileID: 11400000, guid: 5c946a150f9bbe0488dbfae5d6b965e7, type: 2}
+      amount: 10
+    - enemy: {fileID: 11400000, guid: c8ce80feaba617d4eb0cf5334f0f7caa, type: 2}
+      amount: 1
+  - waveList:
+    - enemy: {fileID: 11400000, guid: 1d028b37b70c95f4dbf81350ab514707, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: e8873ef2b5138f246b8a36288edbea84, type: 2}
+      amount: 40
+    - enemy: {fileID: 11400000, guid: d78d6f77fad4a8e4695e6adb9f0300c2, type: 2}
       amount: 10
   - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
+    - enemy: {fileID: 11400000, guid: 51abcd9fc31f0e34b8a11a6d0c949af3, type: 2}
+      amount: 30
+    - enemy: {fileID: 11400000, guid: a789ba4b5ee5ac04f8bffb7a6658d9a8, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: 84df83a5e6bdc9740bbe744d6194bd22, type: 2}
+      amount: 50
+    - enemy: {fileID: 11400000, guid: 46353aeba0faebd4f8725603124d398e, type: 2}
       amount: 10
   - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
+    - enemy: {fileID: 11400000, guid: 30d1ba62561144b46801a515e104247a, type: 2}
+      amount: 30
+    - enemy: {fileID: 11400000, guid: 7c6d055687f94bf4ba3dac3c3f9ea40e, type: 2}
+      amount: 100
+    - enemy: {fileID: 11400000, guid: 45dbb4cf5b38ca64fac119e207a5b32c, type: 2}
+      amount: 5
+  - waveList:
+    - enemy: {fileID: 11400000, guid: fe75cf51fed615547b193cdd00a15ffd, type: 2}
+      amount: 50
+    - enemy: {fileID: 11400000, guid: b5fe3883f99b4c444b9248bc0b339b86, type: 2}
+      amount: 40
+    - enemy: {fileID: 11400000, guid: a982b5c723c1a6f408835943fccf827d, type: 2}
       amount: 10
   - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
+    - enemy: {fileID: 11400000, guid: 49e4a8ba6ce42b045b9ecbea215fce67, type: 2}
+      amount: 30
+  - waveList:
+    - enemy: {fileID: 11400000, guid: 9f3ac0f6ab1272746a4af7bf84a3a37b, type: 2}
+      amount: 5
+    - enemy: {fileID: 11400000, guid: 51abcd9fc31f0e34b8a11a6d0c949af3, type: 2}
+      amount: 50
+    - enemy: {fileID: 11400000, guid: a789ba4b5ee5ac04f8bffb7a6658d9a8, type: 2}
+      amount: 40
+    - enemy: {fileID: 11400000, guid: c82679a131cc4bd48a5693d0484ad790, type: 2}
+      amount: 5
+  - waveList:
+    - enemy: {fileID: 11400000, guid: 43bc46846437ee443ba928c187ee7c5b, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: 8e7d8d204aa7e714c80d85191b97511d, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: b99b3208b6ed651459e4a836ace2d85f, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: cad478e5aad4f484d9922634860a1a6f, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: c4d03d1e3083b9847afc35109ca8e20b, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: 10792a197e4087d4aa761243cdbcf3ee, type: 2}
+      amount: 20
+  - waveList:
+    - enemy: {fileID: 11400000, guid: beb8b3df3599d464f890344a3174754f, type: 2}
+      amount: 50
+    - enemy: {fileID: 11400000, guid: 1d028b37b70c95f4dbf81350ab514707, type: 2}
+      amount: 50
+    - enemy: {fileID: 11400000, guid: dc7af9d7b9edcf540af4820db59f90c8, type: 2}
       amount: 10
   - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
+    - enemy: {fileID: 11400000, guid: 49e4a8ba6ce42b045b9ecbea215fce67, type: 2}
+      amount: 40
+    - enemy: {fileID: 11400000, guid: 827b2710a227e9e45b354bdb46eefe7a, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: 30d1ba62561144b46801a515e104247a, type: 2}
+      amount: 60
   - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
+    - enemy: {fileID: 11400000, guid: 420447e852692a34997c982931ed92f5, type: 2}
+      amount: 100
+    - enemy: {fileID: 11400000, guid: 5c946a150f9bbe0488dbfae5d6b965e7, type: 2}
+      amount: 80
+    - enemy: {fileID: 11400000, guid: 54d61b1380e4f1e48b5d2ccd1a6c85f5, type: 2}
+      amount: 60
+    - enemy: {fileID: 11400000, guid: 54d61b1380e4f1e48b5d2ccd1a6c85f5, type: 2}
+      amount: 40
+    - enemy: {fileID: 11400000, guid: 9c98f69c77dd65b4f9118c43b46704c7, type: 2}
+      amount: 20
+    - enemy: {fileID: 11400000, guid: c8ce80feaba617d4eb0cf5334f0f7caa, type: 2}
       amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
-  - waveList:
-    - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
-      amount: 10
+    - enemy: {fileID: 11400000, guid: 81c6f45890d710942b3cdb0f0540c139, type: 2}
+      amount: 1
   - waveList:
     - enemy: {fileID: 11400000, guid: dc6138059d3342b44af677ddb464ba0c, type: 2}
       amount: 10

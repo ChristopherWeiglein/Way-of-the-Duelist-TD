@@ -7,7 +7,7 @@ public class TowerInfo : InfoRoot, IMonsterCard
 {
     public CardDataTypes.MonsterInfo MonsterInfo { get; set; }
     public static float baseRange = 50f;
-    public static float baseCooldown = 1.0f;
+    public static float baseCooldown = 2.0f;
     public TowerTarget towerTarget;
     public List<TowerBuff> buffs;
     public int power = 0;
@@ -81,7 +81,7 @@ public class TowerInfo : InfoRoot, IMonsterCard
                     cooldown *= (1-buff.buffValue);
                     break;
                 case TowerBuff.BuffStat.Range:
-                    range *= buff.buffValue;
+                    range *= (1 + buff.buffValue);
                     break;
                 default: 
                     break;
