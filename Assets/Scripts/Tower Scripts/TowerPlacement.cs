@@ -81,7 +81,7 @@ public class TowerPlacement : MonoBehaviour
         if (!canBePlaced)
             return;
 
-        GameManager.TowerPlaced();
+        GameManager.TowerPlaced(gameObject);
         enabled = false;
     }
 }

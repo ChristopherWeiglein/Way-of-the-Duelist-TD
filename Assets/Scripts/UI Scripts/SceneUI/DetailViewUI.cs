@@ -28,9 +28,10 @@ public class DetailViewUI : MonoBehaviour
                 towerType.text = "Towertype : " + ConvertCardData.ToMonsterData(cardData).GetTowerPrefab().name;
                 break;
             case CardDataTypes.CardType.Spell:
-                cardInfo.text = "Spell";
+                cardInfo.text = "Spell/" + ConvertCardData.ToSpellType(cardData).GetSpellType().ToString();
                 atk.text = "";
                 def.text = "";
+                towerType.text = (cardData is BufferSpellData) ? "Towertype : " + ConvertCardData.ToBufferSpellData(cardData).GetTowerPrefab().name : "";
                 break;
             case CardDataTypes.CardType.Trap:
                 break;

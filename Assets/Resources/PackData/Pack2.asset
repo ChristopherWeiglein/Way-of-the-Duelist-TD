@@ -20,9 +20,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b99b3208b6ed651459e4a836ace2d85f, type: 2}
   - {fileID: 11400000, guid: cad478e5aad4f484d9922634860a1a6f, type: 2}
   - {fileID: 11400000, guid: 54d61b1380e4f1e48b5d2ccd1a6c85f5, type: 2}
+  - {fileID: 11400000, guid: d3ed8ea59550c9744bc3dcb9b131ce6a, type: 2}
+  - {fileID: 11400000, guid: 5606c9b579122964f870db1370df5cc8, type: 2}
+  - {fileID: 11400000, guid: 7ffe4a66a7496854e82ce448718ad4bc, type: 2}
+  - {fileID: 11400000, guid: f27637df7ac830a43ac7b8f2ffdedece, type: 2}
+  - {fileID: 11400000, guid: 77ab1df9cd8dacf41815b24f10896596, type: 2}
+  - {fileID: 11400000, guid: ad3410d53320eea49a57413c3429fcd2, type: 2}
+  - {fileID: 11400000, guid: 54ff336e21d165f4daa919f74bed9591, type: 2}
+  - {fileID: 11400000, guid: f66c8e6dab954d94a9db41f358934526, type: 2}
+  - {fileID: 11400000, guid: 76b155fe5b565a042b9bfeb295ce8746, type: 2}
+  - {fileID: 11400000, guid: a398098e5de839442a55529d0f27ce98, type: 2}
+  - {fileID: 11400000, guid: 0d1cd40e8fa48334c8e3a2a82166a66b, type: 2}
+  - {fileID: 11400000, guid: f6f48bb87c698084c9c812e84633cd5e, type: 2}
+  - {fileID: 11400000, guid: c47dcc2fcf721cd409be099d55a79771, type: 2}
   rarePulls:
   - {fileID: 11400000, guid: 46ce5fac20549f14380eb622c2b4a2dc, type: 2}
-  - {fileID: 11400000, guid: 54ff336e21d165f4daa919f74bed9591, type: 2}
+  - {fileID: 11400000, guid: d4e84d3297e688649bfaf1d43c1074cc, type: 2}
+  - {fileID: 11400000, guid: 284610ffea839fd4b9c81892116358ea, type: 2}
+  - {fileID: 11400000, guid: a60a68b1e1327e7428529cf472d3b1ba, type: 2}
+  - {fileID: 11400000, guid: 6f3c37c9486447441953f25efb07e0ea, type: 2}
+  - {fileID: 11400000, guid: 18ed76a6cc394414fadfc4d04762a1c9, type: 2}
+  - {fileID: 11400000, guid: 48bc3b8225a077b4c8e52ad53e726d64, type: 2}
+  - {fileID: 11400000, guid: 3e7324ffec89e284ba43e15d21704b09, type: 2}
   commonCardsPerPack: 4
   rareCardsPerPack: 1
   prizePerPack: 200

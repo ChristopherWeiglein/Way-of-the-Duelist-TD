@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf38b58456d8fd46911c98e8e1e5f50, type: 3}
+  m_Name: Umiiruka
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Umiiruka
+    cardText: Raises ATK of water towers by 500 and their range by 20%
+    sprite: {fileID: 5274428472326448337, guid: c245d2bc2098e274d90152855170e386, type: 3}
+    cardType: 1
+  hasCardSpecificScript: 1
+  spellType: 3
+  towerPrefab: {fileID: 1577506767175936287, guid: 52f57878eb2a6234baffe7a73e98479c, type: 3}

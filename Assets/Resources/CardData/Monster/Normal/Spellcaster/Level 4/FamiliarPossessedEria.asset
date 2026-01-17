@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e5cfbd4daeaaa409acb6107bb6ef84, type: 3}
+  m_Name: FamiliarPossessedEria
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Familiar-Possessed - Eria
+    cardText: Look at that nice normal monster border
+    sprite: {fileID: 8360279993166114101, guid: d175dfad9dd1a6243a9659a085298692, type: 3}
+    cardType: 0
+  hasCardSpecificScript: 0
+  monsterInfo:
+    attribute: 5
+    type: 19
+    attack: 1850
+    defense: 1500
+    level: 4
+    tributeCost: 0
+    monsterTags: 00000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}

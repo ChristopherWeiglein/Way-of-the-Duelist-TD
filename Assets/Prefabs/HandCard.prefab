@@ -447,8 +447,8 @@ GameObject:
   - component: {fileID: -6659505844582814032}
   - component: {fileID: 358947826748022446}
   m_Layer: 0
-  m_Name: Generic Card Prefab
-  m_TagString: Untagged
+  m_Name: HandCard
+  m_TagString: HandCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

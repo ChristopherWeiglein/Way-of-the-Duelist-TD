@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf38b58456d8fd46911c98e8e1e5f50, type: 3}
+  m_Name: Umi
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Umi
+    cardText: All Fish, Sea Serpent, Thunder and Aqua towers in range gain 200 ATK
+      and 20% speed.All Machine and Pyro towers in range loose 200 ATK and 20% speed
+    sprite: {fileID: -4324109944141077364, guid: b752cfa2de4e62c4e9bd0abca62b8fc8, type: 3}
+    cardType: 1
+  hasCardSpecificScript: 1
+  spellType: 3
+  towerPrefab: {fileID: 1577506767175936287, guid: 52f57878eb2a6234baffe7a73e98479c, type: 3}

@@ -24,4 +24,6 @@ public class TrackTowersInRange : MonoBehaviour
 
         towersInRange.Remove(collision.gameObject);
     }
+
+    public List<GameObject> GetTowersInRange() => towersInRange;
 }

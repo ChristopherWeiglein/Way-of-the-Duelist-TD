@@ -3,19 +3,13 @@ using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour
 {
-    private float cooldown;
-    private int power;
     private TrackEnemiesInRange trackEnemiesInRange;
     [SerializeField] private TowerInfo towerInfo;
     [SerializeField] private GameObject projectile;
 
     void Start()
     {
-        MonsterData monsterData = (MonsterData)towerInfo.cardData;
-
         trackEnemiesInRange = GetComponentInChildren<TrackEnemiesInRange>();
-        cooldown = 1 - monsterData.GetMonsterInfo().level / 20;
-        power = monsterData.GetMonsterInfo().attack;
         StartCoroutine(ShootEnemy());
     }
 
@@ -23,7 +17,7 @@ public class ShootProjectile : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(cooldown);
+            yield return new WaitForSeconds(towerInfo.GetCooldown());
             while (ShootProjectileAtEnemy())
                 yield return null;
         }
@@ -46,9 +40,8 @@ public class ShootProjectile : MonoBehaviour
     {
         GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity, gameObject.transform);
         ProjectileData projectileData = newProjectile.GetComponent<ProjectileData>();
-        projectileData.target = trackEnemiesInRange.GetEnemiesInRange()[0];
-        projectileData.power = power;
+        projectileData.target = trackEnemiesInRange.GetEnemiesInRange()?[0];
+        projectileData.power = GetComponent<TowerInfo>().GetAttackPower();
     }
 
-    public float GetSpeed() => cooldown;
 }

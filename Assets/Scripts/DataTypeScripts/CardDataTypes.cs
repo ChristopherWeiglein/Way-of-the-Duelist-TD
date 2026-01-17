@@ -41,6 +41,16 @@ public class CardDataTypes
         None
     }
 
+    public enum SpellType
+    {
+        Normal,
+        QuickPlay,
+        Equip,
+        Field,
+        Continous,
+        Ritual
+    }
+
     public enum MonsterAttribute
     {
         Dark,

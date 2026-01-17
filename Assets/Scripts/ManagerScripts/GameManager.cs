@@ -3,15 +3,15 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public delegate void EventAction();
+    public delegate void EventActionWithGameObject(GameObject sender);
     public static event EventAction OnWaveStart;
     public static event EventAction OnTurnStart;
     public static event EventAction OnCardDrawn;
     public static event EventAction OnGameStateChanged;
-    public static event EventAction OnMonsterSummoned;
+    public static event EventActionWithGameObject OnMonsterSummoned;
     public static event EventAction OnTowerPlacementEnter;
     public static event EventAction OnCardSentToGrave;
     public static event EventAction OnOpenGameState;
-    public static event EventAction OnExtraDeckChecked;
     public static event EventAction OnCardAdded;
 
     public static GameMode CurrentGameMode { get; private set; } = GameMode.Idle;
@@ -63,12 +63,13 @@ public class GameManager : MonoBehaviour
         OnTowerPlacementEnter?.Invoke();
     }
 
-    public static void TowerPlaced()
+    public static void TowerPlaced(GameObject sender)
     {
         if(CurrentGameMode != GameMode.TowerPlacement)
             return;
 
         CurrentGameMode = GameMode.Idle;
+        OnMonsterSummoned?.Invoke(sender);
         OnGameStateChanged?.Invoke();
         OnOpenGameState?.Invoke();
     }
