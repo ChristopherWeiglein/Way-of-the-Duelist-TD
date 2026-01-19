@@ -1,8 +1,9 @@
+using MemoryPack;
 using System;
 using UnityEngine;
 
 [Serializable]
-public  class DeckEditorDataTypes
+public class DeckEditorDataTypes
 {
     public CardData cardData;
     public int amount;

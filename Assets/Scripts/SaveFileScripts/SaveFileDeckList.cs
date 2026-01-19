@@ -1,23 +1,27 @@
+using MemoryPack;
 using System.Collections.Generic;
 
+
 [System.Serializable]
-public class SaveFileDeckList
+[MemoryPackable]
+public partial class SaveFileDeckList
 {
-    public string[] deckList;
-    public string[] extraDeckList;
+    public List<DeckString> deckboxes;
 
-    public SaveFileDeckList(List<CardData> deckList, List<CardData> extraDeckList)
+    [MemoryPackConstructor]
+    public SaveFileDeckList() { }
+
+    public SaveFileDeckList(List<Deck> deckboxes)
     {
-        this.deckList = new string[deckList.Count];
-        for(int i = 0;i < deckList.Count; i++)
+        this.deckboxes = new();
+        foreach(Deck deck in deckboxes)
         {
-            this.deckList[i] = deckList[i].name;
-        }
-
-        this.extraDeckList = new string[extraDeckList.Count];
-        for(int i = 0; i < extraDeckList.Count; i++)
-        {
-            this.extraDeckList[i] = extraDeckList[i].name;
+            DeckString deckString = new DeckString() { decklist = new(), extradecklist = new() };
+            foreach(CardData card in deck.decklist)
+                deckString.decklist.Add(card.name);
+            foreach(CardData card in deck.extraDecklist)
+                deckString.extradecklist.Add(card.name);
+            this.deckboxes.Add(deckString);
         }
     }
 }

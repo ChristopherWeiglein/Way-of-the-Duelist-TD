@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 using static DeckEditorDataTypes;
@@ -27,17 +28,17 @@ public class DeckEditorCardFactory : MonoBehaviour
         newCard.GetComponent<InfoRoot>().cardInfo = cardData.GetCardInfo();
         newCard.AddComponent<DestroyCards>();
 
-        switch (parent.name)
+        switch (parent.name.Substring(0,3))
         {
             case "Box":
                 newCard.AddComponent<AddCardToDeck>();
                 newCard.AddComponent<ShowCardAmountInBox>();
                 break;
-            case "Deck":
-            case "ExtraDeck":
+            case "Dec":
+            case "Ext":
                 newCard.AddComponent<RemoveCardFromDeck>();
                 break;
-            case "PullsPanel":               
+            case "Pul":               
                 break;
             default:
                 break;

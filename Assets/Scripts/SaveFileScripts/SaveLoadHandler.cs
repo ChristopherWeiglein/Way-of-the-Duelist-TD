@@ -4,92 +4,73 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEditor;
 using System.Linq;
+using MemoryPack;
 
 public static class SaveLoadHandler
 {
     public static List<DeckEditorDataTypes> cardList;
-    public static List<CardData> deckList;
-    public static List<CardData> extraDeckList;
+    public static List<Deck> deckBoxes;
     public static int starchips;
     public static int[] records;
-    private static readonly string decklistPath = Application.persistentDataPath + "\\Decklist.ygotd";
+    public static int unlockedDeckSlots;
+    private static readonly string decklistPath = Application.persistentDataPath + "\\Decklists.ygotd";
     private static readonly string cardlistPath = Application.persistentDataPath + "\\Cardlist.ygotd";
     private static readonly string profilePath = Application.persistentDataPath + "\\Profile.ygotd";
 
-    //Called from DeckEditor
-    public static void SaveDeckList()
+    public static async void SaveDeckList(List<Deck> deckboxes)
     {
-        List<CardData> deckList = GameObject.Find("Deck").GetComponent<DeckBoxHandler>().GetDeckList();
-        List<CardData> extraDeckList = GameObject.Find("ExtraDeck").GetComponent<ExtraDeckBoxHandler>().GetExtraDeckList();
-
-        SaveFileDeckList saveFileObject = new(deckList, extraDeckList);
-
-        BinaryFormatter formatter = new();
+        SaveFileDeckList saveFileObject = new(deckBoxes);
 
         FileStream fileStream = new(decklistPath, FileMode.Create);
 
-        formatter.Serialize(fileStream, saveFileObject);
+        await MemoryPackSerializer.SerializeAsync(fileStream, saveFileObject);
         fileStream.Close();
     }
 
-    public static void SaveProfileData(int starchips, int[] records)
+    public static async void SaveProfileData(int starchips, int[] records, int unlockedDeckslots)
     {
-        SaveFileProfile saveFileObject = new(starchips, records);
-
-        BinaryFormatter formatter = new();
+        SaveFileProfile saveFileObject = new(starchips, records, unlockedDeckslots);
 
         FileStream fileStream = new(profilePath, FileMode.Create);
 
-        formatter.Serialize(fileStream, saveFileObject);
+        await MemoryPackSerializer.SerializeAsync(fileStream, saveFileObject);
         fileStream.Close();
     }
 
-    public static void SaveCardList(List<DeckEditorDataTypes> cardlist)
+    public static async void SaveCardList(List<DeckEditorDataTypes> cardlist)
     {
         SaveFileCardList saveFileObject = new(cardlist);
-        BinaryFormatter formatter = new();
         FileStream fileStream = new(cardlistPath, FileMode.Create);
-        formatter.Serialize(fileStream, saveFileObject);
+        await MemoryPackSerializer.SerializeAsync(fileStream, saveFileObject);
         fileStream.Close();
     }
 
-    public static void LoadDeckList()
+    public static void LoadAllDeckLists()
     {
-        if(File.Exists(decklistPath))
+        LoadProfileData();
+        if (File.Exists(decklistPath))
         {
-            BinaryFormatter formatter = new();
             FileStream fileStream = new(decklistPath, FileMode.Open);
-
-            SaveFileDeckList data = formatter.Deserialize(fileStream) as SaveFileDeckList;
-            fileStream.Close();
-
+            SaveFileDeckList decks = MemoryPackSerializer.DeserializeAsync<SaveFileDeckList>(fileStream).Result;
             List<CardData> allCards = Resources.LoadAll<CardData>("CardData").ToList();
-
-            deckList = new();
-            foreach(string cardName in data.deckList)
+            deckBoxes = new();
+            foreach(DeckString deckString in decks.deckboxes)
             {
-                deckList.Add(allCards.Find(card => card.name == cardName));
+                Deck deck = new(new(), new());
+                foreach(string cardName in deckString.decklist)
+                    deck.decklist.Add(allCards.Find(a => a.name == cardName));
+                foreach (string cardName in deckString.extradecklist)
+                    deck.extraDecklist.Add(allCards.Find(a => a.name == cardName));
+                deckBoxes.Add(deck);
             }
 
-            extraDeckList = new();
-            foreach(string cardName in data.extraDeckList)
-            {
-                extraDeckList.Add(allCards.Find(cardList => cardList.name == cardName));
-            }
+            fileStream.Close();
         }
         else
         {
             PredefinedSave saveData = Resources.Load<PredefinedSave>("SaveData/StartingSave");
-            deckList = new();
-            foreach(CardData card in saveData.GetDeckList())
-            {
-                deckList.Add(card);
-            }
-            extraDeckList = new();
-            foreach(CardData card in saveData.GetExtraDeckList())
-            {
-                extraDeckList.Add(card);
-            }
+
+            deckBoxes = saveData.GetDecks();
         }
     }
 
@@ -97,14 +78,15 @@ public static class SaveLoadHandler
     {
         if (File.Exists(profilePath))
         {
-            BinaryFormatter formatter = new();
+
             FileStream fileStream = new(profilePath, FileMode.Open);
 
-            SaveFileProfile data = formatter.Deserialize(fileStream) as SaveFileProfile;
+            SaveFileProfile data = MemoryPackSerializer.DeserializeAsync<SaveFileProfile>(fileStream).Result;
             fileStream.Close();
 
             starchips = data.starchips;
             records = data.records;
+            unlockedDeckSlots = data.unlockedDeckslots;
         }
         else
         {
@@ -112,6 +94,7 @@ public static class SaveLoadHandler
 
             starchips = saveData.GetStarChips();
             records = saveData.GetRecords();
+            unlockedDeckSlots = saveData.GetUnlockedDeckslots();
         }
     }
 
@@ -119,18 +102,19 @@ public static class SaveLoadHandler
     {
         if (File.Exists(cardlistPath))
         {
-            BinaryFormatter formatter = new();
             FileStream fileStream = new(cardlistPath, FileMode.Open);
 
-            SaveFileCardList data = formatter.Deserialize(fileStream) as SaveFileCardList;
-            fileStream.Close();
+            SaveFileCardList data = MemoryPackSerializer.DeserializeAsync<SaveFileCardList>(fileStream).Result;
 
             List<CardData> allCards = Resources.LoadAll<CardData>("CardData").ToList();
+
             cardList = new();
-            for (int i = 0; i < data.cardList.Length; i++)
+            foreach (StringIntPair card in data.cardList)
             {
-                cardList.Add(new DeckEditorDataTypes(allCards.Find(card => card.name == data.cardList[i]), data.cardListAmount[i]));
+                cardList.Add(new DeckEditorDataTypes(allCards.Find(a => a.name == card.text), card.number));
             }
+            fileStream.Close();
+
         }
         else
         {

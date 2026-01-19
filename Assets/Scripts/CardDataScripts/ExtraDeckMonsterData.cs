@@ -1,6 +1,8 @@
+using MemoryPack;
 using UnityEngine;
 
-public class ExtraDeckMonsterData : MonsterData
+[MemoryPackable]
+public partial class ExtraDeckMonsterData : MonsterData
 {
 
 }

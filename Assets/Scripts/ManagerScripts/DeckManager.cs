@@ -21,8 +21,8 @@ public class DeckManager : MonoBehaviour
         else
         {
             instance = this;
-            SaveLoadHandler.LoadDeckList();
-            deck = SaveLoadHandler.deckList;
+            SaveLoadHandler.LoadAllDeckLists();
+            deck = SaveLoadHandler.deckBoxes[0].decklist;
             ShuffleDeck();
         }
         

@@ -24,6 +24,6 @@ public class AddCardToDeck : MonoBehaviour
         if (cardInfo.cardData == null)
             return;
 
-        GameObject.Find("Deck").GetComponent<DeckBoxHandler>().TryAddCardToDeck(cardInfo.cardData);
+        GameObject.Find("Deckboxes").GetComponentInChildren<DeckBoxHandler>().TryAddCardToDeck(cardInfo.cardData);
     }
 }

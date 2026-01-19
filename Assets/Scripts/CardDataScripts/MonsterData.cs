@@ -1,8 +1,11 @@
+using MemoryPack;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [CreateAssetMenu(fileName = "MonsterData", menuName = "Scriptable Objects/Monster/NormalMonster")]
-public class MonsterData : CardData
+[MemoryPackable]
+public partial class MonsterData : CardData
 {
     [SerializeField] private CardDataTypes.MonsterInfo monsterInfo;
     [SerializeField] private GameObject towerPrefab;

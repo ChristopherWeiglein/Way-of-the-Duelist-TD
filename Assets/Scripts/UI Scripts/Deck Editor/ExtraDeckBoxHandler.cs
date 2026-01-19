@@ -10,8 +10,8 @@ public class ExtraDeckBoxHandler : MonoBehaviour
     {
         if(transform.childCount > 0)
             BroadcastMessage("Destroy");
-        SaveLoadHandler.LoadDeckList();
-        extraDeckList = SaveLoadHandler.extraDeckList;
+        SaveLoadHandler.LoadAllDeckLists();
+        extraDeckList = SaveLoadHandler.deckBoxes[0].extraDecklist;
         ShowDeckList();
         RemoveCardsFromBox();
     }

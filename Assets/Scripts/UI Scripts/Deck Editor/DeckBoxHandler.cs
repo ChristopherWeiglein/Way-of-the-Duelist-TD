@@ -1,27 +1,28 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DeckBoxHandler : MonoBehaviour
 {
     private List<CardData> deckList = new();
 
+
     public void InstantiateDeck()
     {
         if(transform.childCount >  0)
             BroadcastMessage("Destroy");
-        SaveLoadHandler.LoadDeckList();
-        deckList = SaveLoadHandler.deckList;
+        SaveLoadHandler.LoadAllDeckLists();
+        deckList = SaveLoadHandler.deckBoxes[0].decklist;
         ShowDeckList();
         RemoveCardsFromBox();
     }
 
     private void RemoveCardsFromBox()
     {
-        BoxHandler boxHandler = GameObject.Find("Box").GetComponent<BoxHandler>();
         foreach(CardData card in deckList)
         {
-            if (!boxHandler.TryGetCardFromBox(card))
+            if (!GameObject.Find("Box").GetComponent<BoxHandler>().TryGetCardFromBox(card))
                 Debug.Log(card.name + " not found!");
         }
     }
@@ -38,7 +39,7 @@ public class DeckBoxHandler : MonoBehaviour
     public bool TryAddCardToDeck(CardData cardData)
     {
         if (cardData is ExtraDeckMonsterData)
-            return GameObject.Find("ExtraDeck").GetComponent<ExtraDeckBoxHandler>().TryAddCardToDeck(cardData);
+            return transform.parent.GetComponentInChildren<ExtraDeckBoxHandler>().TryAddCardToDeck(cardData);
         if (deckList.FindAll(card => card.GetCardInfo().cardName == cardData.GetCardInfo().cardName).Count >= 3 || deckList.Count >= 60)
             return false;
 
@@ -55,7 +56,7 @@ public class DeckBoxHandler : MonoBehaviour
     {
         if(cardData is ExtraDeckMonsterData)
         {
-            GameObject.Find("ExtraDeck").GetComponent<ExtraDeckBoxHandler>().RemoveCardFromExtraDeck(cardData);
+            transform.parent.GetComponentInChildren<ExtraDeckBoxHandler>().RemoveCardFromExtraDeck(cardData);
             return;
         }
 

@@ -1,19 +1,24 @@
+using MemoryPack;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class SaveFileCardList
+[MemoryPackable]
+public partial class SaveFileCardList
 {
-    public string[] cardList;
-    public int[] cardListAmount;
+    public List<StringIntPair> cardList;
+
+    [MemoryPackConstructor]
+    public SaveFileCardList()
+    {
+
+    }
 
     public SaveFileCardList(List<DeckEditorDataTypes> cardList)
     {
-        this.cardList = new string[cardList.Count];
-        this.cardListAmount = new int[cardList.Count];
-        for (int i = 0; i < cardList.Count; i++)
+        this.cardList = new();
+        foreach(DeckEditorDataTypes deckEditorData in cardList)
         {
-            this.cardList[i] = cardList[i].cardData.name;
-            this.cardListAmount[i] = cardList[i].amount;
+            this.cardList.Add(new StringIntPair() { text = deckEditorData.cardData.name, number = deckEditorData.amount });
         }
     }
 }

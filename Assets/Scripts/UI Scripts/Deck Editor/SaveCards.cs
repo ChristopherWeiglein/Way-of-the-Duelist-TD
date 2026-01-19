@@ -11,7 +11,17 @@ public class SaveCards : MonoBehaviour
             GameObject.Find("Message").GetComponent<MessageHandler>().ShowMessageForSeconds("Deck size too low", 3);
             return;
         }
+        if(decklistcount > 60)
+        {
+            GameObject.Find("Message").GetComponent<MessageHandler>().ShowMessageForSeconds("Deck size too high", 3);
+            return;
+        }
+        if(extradecklistcount > 15)
+        {
+            GameObject.Find("Message").GetComponent<MessageHandler>().ShowMessageForSeconds("Extradeck size too high", 3);
+            return;
+        }
 
-        SaveLoadHandler.SaveDeckList();
+
     }
 }

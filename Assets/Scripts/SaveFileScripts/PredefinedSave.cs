@@ -5,14 +5,22 @@ using UnityEngine;
 public class PredefinedSave : ScriptableObject
 {
     [SerializeField] private List<DeckEditorDataTypes> cardList;
-    [SerializeField] private List<CardData> deckList;
-    [SerializeField] private List<CardData> extraDeckList;
+    [SerializeField] private List<Deck> decks;
     [SerializeField] private int starchips;
     [SerializeField] private int[] records;
+    [SerializeField] private int unlockedDeckslots;
 
     public List<DeckEditorDataTypes> GetCardList() => cardList;
-    public List<CardData> GetDeckList() => deckList;
-    public List<CardData> GetExtraDeckList() => extraDeckList;
+    public List<Deck> GetDecks()
+    {
+        List<Deck> deckboxes = new List<Deck>();
+        foreach(Deck deck in decks)
+        {
+            deckboxes.Add(new Deck(new List<CardData>(deck.decklist), new List<CardData>(deck.extraDecklist)));
+        }
+        return deckboxes;
+    }
     public int GetStarChips() => starchips;
     public int[] GetRecords() => records;
+    public int GetUnlockedDeckslots() => unlockedDeckslots;
 }

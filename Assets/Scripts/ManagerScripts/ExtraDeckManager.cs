@@ -6,7 +6,7 @@ using UnityEngine;
 public class ExtraDeckManager : MonoBehaviour
 {
     public static ExtraDeckManager instance;
-    public List<ExtraDeckMonsterData> extraDeck = new();       //Add commented part later
+    public List<ExtraDeckMonsterData> extraDeck = new();  
     public List<FusionMonsterData> availableFusionSummons;
     [SerializeField] private TMP_Text extraDeckSize;
 
@@ -19,8 +19,8 @@ public class ExtraDeckManager : MonoBehaviour
         else
         {
             instance = this;
-            SaveLoadHandler.LoadDeckList();
-            extraDeck = ConvertCardData.ToExtraDeckMonsterList(SaveLoadHandler.extraDeckList);
+            SaveLoadHandler.LoadAllDeckLists();
+            extraDeck = ConvertCardData.ToExtraDeckMonsterList(SaveLoadHandler.deckBoxes[0].extraDecklist);
         }
     }
 

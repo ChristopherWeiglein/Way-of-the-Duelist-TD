@@ -19,7 +19,7 @@ public class StarChipShopHandler : MonoBehaviour
             return false;
 
         starchips -= amount;
-        SaveLoadHandler.SaveProfileData(starchips, SaveLoadHandler.records);
+        SaveLoadHandler.SaveProfileData(starchips, SaveLoadHandler.records, SaveLoadHandler.unlockedDeckSlots);
         ShowStarChipsAmount();
         return true;
     }

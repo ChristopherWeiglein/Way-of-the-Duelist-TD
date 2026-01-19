@@ -1,3 +1,4 @@
+using MemoryPack;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -88,7 +89,7 @@ public class CardDataTypes
     }
 
     [Serializable]
-    public struct MonsterInfo
+    public partial struct MonsterInfo
     {
         public MonsterAttribute attribute;
         public MonsterType type;
@@ -100,11 +101,11 @@ public class CardDataTypes
     }
 
     [Serializable]
-    public struct CardInfo
+    public partial struct CardInfo
     {
         public string cardName;
         public string cardText;
         public Sprite sprite;
-        public CardDataTypes.CardType cardType;
+        public CardType cardType;
     }
 }

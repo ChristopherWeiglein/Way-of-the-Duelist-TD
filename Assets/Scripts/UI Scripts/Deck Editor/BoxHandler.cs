@@ -11,6 +11,8 @@ public class BoxHandler : MonoBehaviour
     public delegate void EventMethod();
     public static event EventMethod OnCardsShown;
     public static event EventMethod OnAmountChanged;
+
+    private string deckBoxNumber = "1";
    
 
     private void OnEnable()
@@ -21,8 +23,8 @@ public class BoxHandler : MonoBehaviour
         cardList = SaveLoadHandler.cardList;
         ShowCardList();
         OnAmountChanged?.Invoke();
-        GameObject.Find("Deck").GetComponent<DeckBoxHandler>().InstantiateDeck();
-        GameObject.Find("ExtraDeck").GetComponent<ExtraDeckBoxHandler>().InstantiateExtraDeck();
+        GameObject.Find("Deck" + deckBoxNumber).GetComponent<DeckBoxHandler>().InstantiateDeck();
+        GameObject.Find("ExtraDeck" + deckBoxNumber).GetComponent<ExtraDeckBoxHandler>().InstantiateExtraDeck();
     }
 
     private void ShowCardList()
@@ -54,4 +56,9 @@ public class BoxHandler : MonoBehaviour
     public List<DeckEditorDataTypes> GetCardList() => cardList;
 
     public int GetCardAmountInBox(CardData cardData) => cardList.Find(card => card.cardData.name == cardData.name).amount;
+
+    public void SetDeckBoxNumber(string deckBoxNumber)
+    {
+        this.deckBoxNumber = deckBoxNumber;
+    }
 }

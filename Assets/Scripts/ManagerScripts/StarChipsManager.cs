@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class StarChipsManager : MonoBehaviour
 {
-    public int starchips {  get; private set; }
+    public int starchips { get; private set; }
     private int[] records;
     [SerializeField] private TMP_Text textComponent;
 
@@ -33,7 +33,7 @@ public class StarChipsManager : MonoBehaviour
         {
             records[recordsIndex] = SpawnManager.instance.WaveNumber;
         }
-        SaveLoadHandler.SaveProfileData(starchips, records);
+        SaveLoadHandler.SaveProfileData(starchips, records, SaveLoadHandler.unlockedDeckSlots);
     }
 
     public void AddStarChips(int starchips)
