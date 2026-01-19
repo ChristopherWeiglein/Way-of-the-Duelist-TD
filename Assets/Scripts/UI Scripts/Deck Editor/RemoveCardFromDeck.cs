@@ -24,7 +24,7 @@ public class RemoveCardFromDeck : MonoBehaviour
         if (cardInfo.cardData == null)
             return;
 
-        GameObject.Find("Deckboxes").GetComponentInChildren<DeckBoxHandler>().RemoveCardFromDeck(cardInfo.cardData);
+        GameObject.Find("Deckboxes").GetComponent<MultiDeckHandler>().RemoveCardFromDeck(cardInfo.cardData);
         GameObject.Find("Box").GetComponent<BoxHandler>().AddCardToBox(cardInfo.cardData);
         Destroy(gameObject);
     }

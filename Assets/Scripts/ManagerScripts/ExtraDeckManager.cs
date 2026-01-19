@@ -9,6 +9,7 @@ public class ExtraDeckManager : MonoBehaviour
     public List<ExtraDeckMonsterData> extraDeck = new();  
     public List<FusionMonsterData> availableFusionSummons;
     [SerializeField] private TMP_Text extraDeckSize;
+    private int deckslot = 0;
 
     private void Awake()
     {
@@ -19,9 +20,12 @@ public class ExtraDeckManager : MonoBehaviour
         else
         {
             instance = this;
-            SaveLoadHandler.LoadAllDeckLists();
-            extraDeck = ConvertCardData.ToExtraDeckMonsterList(SaveLoadHandler.deckBoxes[0].extraDecklist);
         }
+    }
+
+    public void SetExtraDeck(List<CardData> extraDecklist)
+    {
+        extraDeck = ConvertCardData.ToExtraDeckMonsterList(extraDecklist);
     }
 
     private void OnEnable()

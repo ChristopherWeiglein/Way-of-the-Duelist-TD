@@ -11,6 +11,9 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private List<CardData> deck = new();
     [SerializeField] private GameObject hand;
     [SerializeField] private TMP_Text text;
+    private int deckslot = 0;
+    private List<Deck> decks;
+    private int unlockedDeckslots;
 
     private void Awake()
     {
@@ -22,10 +25,19 @@ public class DeckManager : MonoBehaviour
         {
             instance = this;
             SaveLoadHandler.LoadAllDeckLists();
-            deck = SaveLoadHandler.deckBoxes[0].decklist;
-            ShuffleDeck();
+            decks = SaveLoadHandler.deckBoxes; 
+            SetDeck();
+            SaveLoadHandler.LoadProfileData();
+            unlockedDeckslots = SaveLoadHandler.unlockedDeckSlots;
         }
         
+    }
+
+    private void SetDeck()
+    {
+        deck = decks[deckslot].decklist;
+        ShuffleDeck();
+        GameObject.Find("ExtraDeck").GetComponent<ExtraDeckManager>().SetExtraDeck(decks[deckslot].extraDecklist);
     }
 
     private void ShuffleDeck()
@@ -39,8 +51,16 @@ public class DeckManager : MonoBehaviour
         {
             if (deck.Count <= 0)
             {
-                GameOverManager.GameOver();
-                return;
+                if(deckslot >= unlockedDeckslots - 1)
+                {
+                    GameOverManager.GameOver();
+                    return;
+                }
+                else
+                {
+                    deckslot++;
+                    SetDeck();
+                }
             }              
             CardFactory.instance.CreateCard(deck[0], gameObject.transform.position, hand);
             deck.RemoveAt(0);

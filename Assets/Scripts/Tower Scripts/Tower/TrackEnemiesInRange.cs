@@ -39,6 +39,7 @@ public class TrackEnemiesInRange : MonoBehaviour
 
     public List<GameObject> GetEnemiesInRange()
     {
+        enemiesInRange.RemoveAll(enemy => enemy == null);
         switch (transform.parent.GetComponent<TowerInfo>().towerTarget)
         {
             case TowerDataTypes.TowerTarget.First:

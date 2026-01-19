@@ -1,27 +1,24 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SaveCards : MonoBehaviour
 {
+    private const int minDeckSize = 40;
+
     public void SaveCardLists()
     {
-        int decklistcount = GameObject.Find("Deck").GetComponent<DeckBoxHandler>().GetDeckList().Count;
-        int extradecklistcount = GameObject.Find("ExtraDeck").GetComponent<ExtraDeckBoxHandler>().GetExtraDeckList().Count;
-        if (decklistcount < 40)
+        List<Deck> decklists = GameObject.Find("Deckboxes").GetComponent<MultiDeckHandler>().GetDecklists();
+        
+        foreach(Deck deck in decklists)
         {
-            GameObject.Find("Message").GetComponent<MessageHandler>().ShowMessageForSeconds("Deck size too low", 3);
-            return;
-        }
-        if(decklistcount > 60)
-        {
-            GameObject.Find("Message").GetComponent<MessageHandler>().ShowMessageForSeconds("Deck size too high", 3);
-            return;
-        }
-        if(extradecklistcount > 15)
-        {
-            GameObject.Find("Message").GetComponent<MessageHandler>().ShowMessageForSeconds("Extradeck size too high", 3);
-            return;
+            if (deck.decklist.Count < minDeckSize)
+            {
+                GameObject.Find("Message").GetComponent<MessageHandler>().ShowMessageForSeconds("At least one of your Decks is below 40 cards.\n Decks were not safed", 3);
+                return;
+            }
         }
 
-
+        SaveLoadHandler.SaveDeckList(decklists);
+        GameObject.Find("Deckboxes").GetComponent<DeckEditorUnlockHandler>().SaveProfile();
     }
 }

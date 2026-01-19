@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -8469152978971816716}
   - component: {fileID: 5171055184462957104}
   - component: {fileID: 9077308982050721425}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Buffer
   m_TagString: Buffer
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 192
+      m_Bits: 64
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 2429072638410988015}
   - component: {fileID: 7763473870389521468}
   - component: {fileID: 5940291075004489327}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,3 +415,4 @@ MonoBehaviour:
     maxNormalAngle: 0
   range: 0
   towersInRange: []
+  TagToTrack: Towers
