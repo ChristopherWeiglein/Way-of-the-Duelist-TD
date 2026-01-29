@@ -7,18 +7,19 @@ public class CheckForAvailableFusionSummons : MonoBehaviour
     [SerializeField] private GameObject hand;
     [SerializeField] private GameObject summonedMonsters;
 
-    private void CheckAvailableSummons()
+    public List<FusionMonsterData> CheckAvailableSummons(List<LocationDataTypes.CardLocation> fusionMaterialLocations)
     {
         List<MonsterData> monsterInRotation;
-        bool fusionPossible = false;
-        bool fusionMaterialAvailable = false;
+        List<FusionMonsterData> availableFusions = new();
+        bool fusionPossible;
+        bool fusionMaterialAvailable;
 
-        ExtraDeckManager.instance.availableFusionSummons.Clear();
+        List<FusionMonsterData> possibleFusions = new();
         foreach (FusionMonsterData extraDeckMonster in ExtraDeckManager.instance.extraDeck)
         {
             if (extraDeckMonster.GetMonsterInfo().monsterTags.Contains(CardDataTypes.MonsterTags.Fusion))
             {
-                monsterInRotation = GetMonsterInRotation();
+                monsterInRotation = GetCardsInRotation.GetMonsterInRotation(fusionMaterialLocations);
 
                 fusionPossible = true;
                 foreach (MonsterData fusionMaterial in extraDeckMonster.GetFusionMaterial())
@@ -36,26 +37,9 @@ public class CheckForAvailableFusionSummons : MonoBehaviour
                     fusionPossible &= fusionMaterialAvailable;
                 }
                 if (fusionPossible)
-                    ExtraDeckManager.instance.availableFusionSummons.Add(extraDeckMonster);
+                    availableFusions.Add(extraDeckMonster);//ExtraDeckManager.instance.availableFusionSummons.Add(extraDeckMonster);
             }
         }
-    }
-
-    private List<MonsterData> GetMonsterInRotation()
-    {
-        List<MonsterData> monsterInRotation = new();
-        CardData cardData = null;
-        foreach(Transform cardTransform in hand.transform)
-        {
-            cardData = cardTransform.gameObject.GetComponent<InfoRoot>().cardData;
-            if (cardData.GetCardInfo().cardType != CardDataTypes.CardType.Monster)
-                continue;
-            monsterInRotation.Add((MonsterData)cardData);
-        }
-        foreach(Transform cardTransform in summonedMonsters.transform)
-        {
-            monsterInRotation.Add((MonsterData)cardTransform.gameObject.GetComponent<InfoRoot>().cardData);
-        }
-        return monsterInRotation;
+        return availableFusions;
     }
 }

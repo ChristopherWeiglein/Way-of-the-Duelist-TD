@@ -40,7 +40,6 @@ public class ExtraDeckManager : MonoBehaviour
 
     private void OnGameStateChanged()
     {
-        SendMessage("CheckAvailableSummons");
         extraDeckSize.text = extraDeck.Count.ToString();
     }
 

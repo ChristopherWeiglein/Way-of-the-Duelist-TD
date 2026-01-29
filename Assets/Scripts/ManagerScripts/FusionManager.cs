@@ -20,9 +20,9 @@ public class FusionManager : MonoBehaviour
         }
     }
 
-    public void StartFusionSummon(List<LocationDataTypes.CardLocation> fusionMaterialLocations)
+    public void StartFusionSummon(List<LocationDataTypes.CardLocation> fusionMaterialLocations, List<FusionMonsterData> possibleFusions)
     {       
-        StartCoroutine(FusionSummonSequence(fusionMaterialLocations));      
+        StartCoroutine(FusionSummonSequence(fusionMaterialLocations, possibleFusions));      
     }
 
     public bool TryUseAsFusionMaterial(MonsterData monsterData)
@@ -76,10 +76,10 @@ public class FusionManager : MonoBehaviour
         return true;
     }
 
-    private IEnumerator FusionSummonSequence(List<LocationDataTypes.CardLocation> fusionMaterialLocations)
+    private IEnumerator FusionSummonSequence(List<LocationDataTypes.CardLocation> fusionMaterialLocations, List<FusionMonsterData> possibleFusions)
     {
         TextMessageManager.instance.ShowMessage("Choose a card to summon");
-        if(!OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(ExtraDeckManager.instance.availableFusionSummons.OfType<CardData>().ToList(), LocationDataTypes.CardLocation.ExtraDeck)))
+        if(!OptionsManager.instance.ShowOptions(CardLocationPairFactory.AddLocationsToList(possibleFusions.OfType<CardData>().ToList(), LocationDataTypes.CardLocation.ExtraDeck)))
             yield break;
         while(GameManager.CurrentGameMode == GameManager.GameMode.SelectionMode)
             yield return null;
