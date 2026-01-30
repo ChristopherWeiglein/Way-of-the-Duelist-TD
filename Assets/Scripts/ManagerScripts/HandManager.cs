@@ -52,4 +52,16 @@ public class HandManager : MonoBehaviour
 
         return list;
     }
+
+    public List<LocationDataTypes.CardLocationData> GetCardsInHand()
+    {
+        List<LocationDataTypes.CardLocationData> list = new();
+
+        foreach (Transform child in transform)
+        {
+            list.Add(new LocationDataTypes.CardLocationData { correlatingGameObject = child.gameObject, cardData = child.GetComponent<InfoRoot>().cardData, cardLocation = LocationDataTypes.CardLocation.Hand });
+        }
+
+        return list;
+    }
 }

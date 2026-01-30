@@ -85,7 +85,8 @@ public class CardDataTypes
         SentFromDeck,
         SentFromHand,
         DestroyedByBattle,
-        DestroyedByCardEffect
+        DestroyedByCardEffect,
+        SentAsCost
     }
 
     [Serializable]
