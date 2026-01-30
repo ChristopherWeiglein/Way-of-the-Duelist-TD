@@ -13,6 +13,7 @@ public class TowerInfo : InfoRoot, IMonsterCard
     public int power = 0;
     public float cooldown;
     public float range;
+    public ProjectileData.OnTargetHit onTargetHit;
 
 
     private void Start()
@@ -88,5 +89,11 @@ public class TowerInfo : InfoRoot, IMonsterCard
             }
         }
         SetRange();
+    }
+
+    public void AddEffectToProjectile(ProjectileData.OnTargetHit onTargetHit)
+    {
+        this.onTargetHit -= onTargetHit;
+        this.onTargetHit += onTargetHit;
     }
 }

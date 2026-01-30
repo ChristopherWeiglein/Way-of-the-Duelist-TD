@@ -9,7 +9,6 @@ public class ExtraDeckManager : MonoBehaviour
     public List<ExtraDeckMonsterData> extraDeck = new();  
     public List<FusionMonsterData> availableFusionSummons;
     [SerializeField] private TMP_Text extraDeckSize;
-    private int deckslot = 0;
 
     private void Awake()
     {

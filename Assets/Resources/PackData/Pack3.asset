@@ -16,7 +16,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9c752dca63cee9a40bb559dc6bca84a4, type: 2}
   - {fileID: 11400000, guid: 7e37170d5c4175d4e8b0cdc537a0c8e5, type: 2}
   - {fileID: 11400000, guid: 7c74b67674e0c9047930a99243d63371, type: 2}
-  rarePulls: []
+  rarePulls:
+  - {fileID: 11400000, guid: 9fef4e69f89539c4a8b8ac6908cfae10, type: 2}
   commonCardsPerPack: 4
   rareCardsPerPack: 1
   prizePerPack: 1000

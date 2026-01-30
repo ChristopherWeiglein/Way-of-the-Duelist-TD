@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896f8049b1f424d40a0ff7e6ce87b126, type: 3}
+  m_Name: RedEyesDarkDragoon
+  m_EditorClassIdentifier: 
+  cardInfo:
+    cardName: Red-Eyes Dark Dragoon
+    cardText: '"Dark Magician" + "Red-Eyes Black Dragon"
+
+      Applies ''Destroyed''
+      and ''Negated'' status to hit enemy and increases own atk by 100 for each enemy
+      hit'
+    sprite: {fileID: 7671076312463403128, guid: 1386bf05b97916140a48ae870b4a1ace, type: 3}
+    cardType: 0
+  hasCardSpecificScript: 1
+  monsterInfo:
+    attribute: 0
+    type: 19
+    attack: 3000
+    defense: 2500
+    level: 8
+    tributeCost: -1
+    monsterTags: 0200000001000000
+  towerPrefab: {fileID: 1577506767175936287, guid: 62f1bf5f2cd261c43a2ddbf2b21fb414, type: 3}
+  fusionMaterial:
+  - {fileID: 11400000, guid: 7335f5c0fc59d9a479ce3dba5976071c, type: 2}
+  - {fileID: 11400000, guid: 9c98f69c77dd65b4f9118c43b46704c7, type: 2}

@@ -104,7 +104,7 @@ public class CardDataTypes
     public partial struct CardInfo
     {
         public string cardName;
-        public string cardText;
+        [TextArea(1,100)]public string cardText;
         public Sprite sprite;
         public CardType cardType;
     }

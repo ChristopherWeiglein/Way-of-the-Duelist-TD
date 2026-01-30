@@ -14,6 +14,7 @@ public class ProjectileHitTarget : MonoBehaviour
         if(projectileData.target == collision.gameObject)
         {
             collision.gameObject.GetComponent<EnemyHealthManager>().ChangeHealth(-projectileData.power);
+            projectileData.onTargetHit?.Invoke(collision.gameObject);
             Destroy(gameObject);
         }
     }

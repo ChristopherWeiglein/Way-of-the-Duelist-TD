@@ -40,8 +40,9 @@ public class ShootProjectile : MonoBehaviour
     {
         GameObject newProjectile = Instantiate(projectile, transform.position, Quaternion.identity, gameObject.transform);
         ProjectileData projectileData = newProjectile.GetComponent<ProjectileData>();
-        projectileData.target = trackEnemiesInRange.GetEnemiesInRange()?[0];
+        projectileData.target = trackEnemiesInRange.GetEnemiesInRange()[0];
         projectileData.power = GetComponent<TowerInfo>().GetAttackPower();
+        projectileData.AddEffectToProjectile(towerInfo.onTargetHit);
     }
 
 }

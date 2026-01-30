@@ -10,7 +10,7 @@ public class MoveForward : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        speed = 1 + ((float)stats.MonsterInfo.level / 4); ;
+        SetSpeed();
     }
 
     // Update is called once per frame
@@ -21,6 +21,16 @@ public class MoveForward : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, destination.transform.position, speed * Time.deltaTime);
         distanceWalked += Time.deltaTime * speed;
+    }
+
+    private void OnEnable()
+    {
+        stats.OnStatusReceived += SetSpeed;
+    }
+
+    private void OnDisable()
+    {
+        stats.OnStatusReceived -= SetSpeed;
     }
 
     public void SetNewDestination(GameObject destination)
@@ -34,5 +44,10 @@ public class MoveForward : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, destination.transform.position, -speed * Time.deltaTime * 20);
         distanceWalked -= speed * Time.deltaTime * 20;
+    }
+
+    private void SetSpeed()
+    {
+        speed = (1 + ((float)stats.MonsterInfo.level / 4)) * (stats.activeStatuses.Contains(EnemyDataTypes.EnemyStatus.Negated) ? 0.8f : 1);
     }
 }

@@ -22,7 +22,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void ChangeHealth(int change)
     {
-        health += Mathf.Abs(change) > 0 ? change : -1;
+        health += (Mathf.Abs(change) > 0 ? change : -1) * (enemyStats.activeStatuses.Contains(EnemyDataTypes.EnemyStatus.Destroyed) ? 2 : 1);
         if(health <= 0)
         {
             GameObject.Find("Starchips").GetComponent<StarChipsManager>().AddStarChips(gameObject.GetComponent<IMonsterCard>().MonsterInfo.level);
